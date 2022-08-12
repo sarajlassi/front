@@ -1,0 +1,575 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Dave ➺ Contrat du compte </h1>
+            </div>
+
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm1="ngForm"  (ngSubmit)="registerContrat(registerForm1)" >
+
+                <p>Remplissez le formulaire pour ajouter un nouveau contrat </p>
+<!--                <div class="form-group">
+                  <label for="type_client">Type du client:</label>
+                  <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                    placeholder="type_client">
+                </div> -->
+                <div class="form-group">
+                  <label for="statusContrat">Status du contrat:</label>
+                  <input type="text" #statusContrat (ngModel)="statusContrat" name="statusContrat" id="statusContrat" class="form-control"
+                    placeholder="statusContrat">
+                </div>
+                <div class="form-group">
+                  <label for="reference">Référence:</label>
+                  <input type="text" #reference (ngModel)="reference" name="reference" id="reference" class="form-control"
+                    placeholder="reference">
+                </div>
+                <div class="form-group">
+                  <label for="renevable">Renouvelable:</label>
+                  <input type="text" #renevable (ngModel)="renevable" name="renevable" id="renevable" class="form-control"
+                    placeholder="renevable">
+                </div>
+                <div class="form-group">
+                  <label for="dateDebut">Date de début:</label>
+                  <input type="date" #dateDebut (ngModel)="dateDebut" name="dateDebut" id="dateDebut" class="form-control"
+                    placeholder="dateDebut">
+                </div>
+                <div class="form-group">
+                  <label for="dateFin">Date de fin:</label>
+                  <input type="date" #dateFin (ngModel)="dateFin" name="dateFin" id="dateFin" class="form-control"
+                    placeholder="dateFin">
+                </div>
+                <div class="form-group">
+                  <label for="active">Active:</label>
+                  <input type="text" #active (ngModel)="active" name="active" id="active" class="form-control"
+                    placeholder="active">
+                </div>
+                <div class="form-group">
+                  <label for="infoConvention">Informations de convention:</label>
+                  <input type="text" #infoConvention (ngModel)="infoConvention" name="infoConvention" id="infoConvention" class="form-control"
+                    placeholder="infoConvention">
+                </div>
+              <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100" >
+                </div>
+              </form>
+                <br/>
+                <p>Remplissez le formulaire pour ajouter un nouveau contrat du compte </p>
+                <form #registerForm="ngForm" (ngSubmit)="registerContratcompte(registerForm)">
+                  
+                <!--   <div class="form-group">
+                  <label for="type_client">Type du client:</label>
+                  <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                    placeholder="type_client">
+                </div> -->
+
+                <div class="form-group">
+                  <label for="numCompte">Numéro du compte:</label>
+                  <input type="text" #numCompte (ngModel)="numCompte" name="numCompte" id="numCompte" class="form-control"
+                    placeholder="numCompte">
+                </div>
+                <div class="form-group">
+                  <label for="dateCloture">Date de cloture:</label>
+                  <input type="date" #dateCloture (ngModel)="dateCloture" name="dateCloture" id="dateCloture" class="form-control"
+                    placeholder="dateCloture">
+                </div>
+                <div class="form-group">
+                  <label for="typeSignature">Type de signature:</label>
+                  <input type="text" #typeSignature (ngModel)="typeSignature" name="typeSignature" id="typeSignature" class="form-control"
+                    placeholder="typeSignature">
+                </div>
+                <div class="form-group">
+                  <label for="dateActivation">Date d'activation:</label>
+                  <input type="date" #dateActivation (ngModel)="dateActivation" name="dateActivation" id="dateActivation" class="form-control"
+                    placeholder="dateActivation">
+                </div>
+                <div class="form-group">
+                  <label for="renouvelable">Renouvelable :</label>
+                  <input type="text" #renouvelable (ngModel)="renouvelable" name="renouvelable" id="renouvelable" class="form-control"
+                    placeholder="renouvelable">
+                </div>
+                <div class="form-group">
+                <label for="confirme">Confirme:</label>
+                <input type="text" #confirme (ngModel)="confirme" name="confirme" id="confirme" class="form-control"
+                  placeholder="confirme">
+                </div>
+              <div class="form-group">
+                <label for="dateCreation">Date de création:</label>
+                <input type="date" #dateCreation (ngModel)="dateCreation" name="dateCreation" id="dateCreation" class="form-control"
+                  placeholder="dateCreation">
+              </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+             <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idContrat</th> 
+                    <th>statusContrat</th>
+                    <th>reference</th>  
+                    <th>renevable</th>
+                    <th>dateDebut</th>
+                    <th>dateFin</th>
+                    <th>active</th>
+                    <th>infoConvention</th>
+<!-- 
+                    <th>idClientMorale</th> 
+                    <th>matricule</th>  
+                    <th>dateCreation</th> 
+                    <th>libLong</th>
+                    <th>libCou</th>
+
+                    <th>idClientPhysiqye</th>
+                    <th>cin</th>
+                    <th>prenom</th>
+                    <th>nom</th>
+                    <th>dateNaissance</th>
+                    <th>emploi</th> -->
+
+<!--                     <th colspan="2">Contact </th>
+                    <th colspan="2">Agence </th>
+                    <th colspan="2">Pays </th> 
+                    <th colspan="2">Compte </th>  
+                -->
+                    <th>Modifier</th>
+                    <th>Supprimer</th> 
+
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+
+                   
+                  <tr *ngFor="let contrat of contratDetails and let clientMor of clientMorDetails and let clientPhy of clientPhyDetails"> 
+                    
+                    
+                    <td>{{contrat.idContrat}}</td>
+                    <td>{{contrat.statusContrat}}</td>
+                    <td>{{contrat.reference}}</td>
+                    <td>{{contrat.renevable}}</td>
+                    <td>{{contrat.dateDebut}}</td>
+                    <td>{{contrat.dateFin}}</td>
+                    <td>{{contrat.active}}</td>
+                    <td>{{contrat.infoConvention}}</td>
+
+<!--                     <td>{{clientMor.idClient}}</td>
+                    <td>{{clientMor.matricule}}</td>
+                    <td>{{clientMor.dateCreation}}</td>
+                    <td>{{clientMor.libCou}}</td>
+                    <td>{{clientMor.libLong}}</td>
+                    
+                    <td>{{clientPhy.idClient}}</td>
+                    <td>{{clientPhy.cin}}</td>
+                    <td>{{clientPhy.prenom}}</td>
+                    <td>{{clientPhy.nom}}</td>
+                    <td>{{clientPhy.dateNaissance}}</td>
+                    <td>{{clientPhy.emploi}}</td> -->
+
+                   <!--  <td>idContact</td>
+                    <td>telephone</td>
+                    <td>idAgence</td>
+                    <td>libLongAgence</td>
+                    <td>idPays</td>
+                    <td>nomPays</td>
+                    <td>numCompte</td>
+                    <td>rib</td> -->
+                    
+  
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModalPhy"
+                        (click)="editContrat(contrat)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteContrat(contrat)">❌</button></td>
+                      
+                  </tr>  
+ 
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+   
+                  
+                  <th>idClient</th> 
+                  <th>matricule</th>  
+                  <th>dateCreation</th> 
+                  <th>libLong</th>
+                  <th>libCou</th>
+
+
+
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+                 
+                <tr *ngFor="let clientMor of clientMorDetails"> 
+                  
+                  
+
+
+                  <td>{{clientMor.idClient}}</td>
+                  <td>{{clientMor.matricule}}</td>
+                  <td>{{clientMor.dateCreation}}</td>
+                  <td>{{clientMor.libCou}}</td>
+                  <td>{{clientMor.libLong}}</td>
+      
+
+                 <!--  <td>idContact</td>
+                  <td>telephone</td>
+                  <td>idAgence</td>
+                  <td>libLongAgence</td>
+                  <td>idPays</td>
+                  <td>nomPays</td>
+                  <td>numCompte</td>
+                  <td>rib</td> -->
+
+                </tr>  
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+   
+
+                  <th>idClientPhysiqye</th>
+                  <th>cin</th>
+                  <th>prenom</th>
+                  <th>nom</th>
+                  <th>dateNaissance</th>
+                  <th>emploi</th> 
+
+
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+                 
+                <tr *ngFor="let clientPhy of clientPhyDetails"> 
+
+                  <td>{{clientPhy.idClient}}</td>
+                  <td>{{clientPhy.cin}}</td>
+                  <td>{{clientPhy.prenom}}</td>
+                  <td>{{clientPhy.nom}}</td>
+                  <td>{{clientPhy.dateNaissance}}</td>
+                  <td>{{clientPhy.emploi}}</td>
+
+                 <!--  <td>idContact</td>
+                  <td>telephone</td>
+                  <td>idAgence</td>
+                  <td>libLongAgence</td>
+                  <td>idPays</td>
+                  <td>nomPays</td>
+                  <td>numCompte</td>
+                  <td>rib</td> -->
+
+                </tr>  
+
+              </tbody>
+            </table>
+          </div>
+                      
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>idContrat</th> 
+                   <th>numCompte</th>
+                  <th>dateCloture</th>
+                  <th>typeSignature</th>
+                  <th>dateActivation</th>
+                  <th>renouvelable</th>  
+                  <th>confirme</th>
+                  <th>dateCreation</th>             
+                  <th>Modifier</th>
+                  <th>Supprimer</th>  
+
+
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+
+                   <tr *ngFor="let contratcompte of contratcompteDetails">
+
+                    
+                    <td>{{contratcompte.idContrat}}</td>
+                    <td>{{contratcompte.numCompte}}</td>
+                    <td>{{contratcompte.dateCloture}}</td>
+                    <td>{{contratcompte.typeSignature}}</td>
+                    <td>{{contratcompte.dateActivation}}</td>
+                    <td>{{contratcompte.renouvelable}}</td>
+                    <td>{{contratcompte.confirme}}</td>
+                    <td>{{contratcompte.dateCreation}}</td>
+<!--                     <td>idContact</td>
+                    <td>telephone</td>
+                    <td>idAgence</td>
+                    <td>libLongAgence</td>
+                    <td>idPays</td>
+                    <td>nomPays</td>
+                    <td>numCompte</td>
+                    <td>rib</td> -->
+
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModalMor"
+                        (click)="editContratcompte(contratcompte)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteContratcompte(contratcompte)">❌</button></td>
+          
+                 
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <div class="modal" id="myModalPhy">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <div class="modal-header">
+                <h4 class="modal-title">Modifier contrat</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+              </div>
+
+
+
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateContrat()">
+          <div class="form-group">
+            <label for="idContrat"> idContrat :</label>
+            <input type="number" disabled="" #idContrat [(ngModel)]="contratToUpdate.idContrat" name="idContrat" id="idContrat"
+              class="form-control" placeholder="idContrat">
+          </div>
+          <div class="form-group">
+            <label for="statusContrat">statusContrat :</label>
+            <input type="text" #statusContrat [(ngModel)]="contratToUpdate.statusContrat" name="statusContrat" id="statusContrat"
+              class="form-control" placeholder="statusContrat">
+          </div>
+          <div class="form-group">
+            <label for="reference">reference :</label>
+            <input type="text" #reference [(ngModel)]="contratToUpdate.reference" name="reference" id="reference" class="form-control"
+              placeholder="reference">
+          </div>
+          <div class="form-group">
+            <label for="renevable">renevable :</label>
+            <input type="text" #renevable [(ngModel)]="contratToUpdate.renevable" name="renevable" id="renevable"
+              class="form-control" placeholder="renevable">
+          </div>
+          <div class="form-group">
+            <label for="dateDebut">dateDebut :</label>
+            <input type="date" #dateDebut [(ngModel)]="contratToUpdate.dateDebut" name="dateDebut" id="dateDebut" class="form-control"
+              placeholder="dateDebut">
+          </div>
+          <div class="form-group">
+            <label for="dateFin">dateFin :</label>
+            <input type="date" #dateFin [(ngModel)]="contratToUpdate.dateFin" name="dateFin" id="dateFin"
+              class="form-control" placeholder="dateFin">
+          </div>
+          <div class="form-group">
+            <label for="active">active :</label>
+            <input type="text" #dateNaissance [(ngModel)]="contratToUpdate.active" name="active" id="active" class="form-control"
+              placeholder="active">
+          </div>
+          <div class="form-group">
+            <label for="infoConvention">infoConvention :</label>
+            <input type="text" #infoConvention [(ngModel)]="contratToUpdate.infoConvention" name="infoConvention" id="infoConvention"
+              class="form-control" placeholder="infoConvention">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+
+      </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="modal" id="myModalMor">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">Modifier contrat du compte</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal">
+          </button>
+        </div>
+
+  
+        <div class="modal-body">
+          <form #updateForm="ngForm" (ngSubmit)="updateContratcompte()">
+            <div class="form-group">
+              <label for="idContrat"> idContrat :</label>
+              <input type="number" disabled="" #idContrat [(ngModel)]="contratcompteToUpdate.idContrat" name="idContrat" id="idContrat"
+                class="form-control" placeholder="idContrat">
+            </div>
+            <div class="form-group">
+              <label for="numCompte">numCompte :</label>
+              <input type="text" #numCompte [(ngModel)]="contratcompteToUpdate.numCompte" name="numCompte" id="numCompte"
+                class="form-control" placeholder="numCompte">
+            </div>
+            <div class="form-group">
+              <label for="dateCloture">dateCloture :</label>
+              <input type="date" #dateCloture [(ngModel)]="contratcompteToUpdate.dateCloture" name="dateCloture" id="dateCloture" class="form-control"
+                placeholder="dateCloture">
+            </div>
+            <div class="form-group">
+              <label for="typeSignature">typeSignature :</label>
+              <input type="text" #typeSignature [(ngModel)]="contratcompteToUpdate.typeSignature" name="typeSignature" id="typeSignature"
+                class="form-control" placeholder="typeSignature">
+            </div>
+            <div class="form-group">
+              <label for="dateActivation">dateActivation :</label>
+              <input type="date" #dateActivation [(ngModel)]="contratcompteToUpdate.dateActivation" name="dateActivation" id="dateActivation"
+                class="form-control" placeholder="dateActivation">
+            </div>
+            <div class="form-group">
+              <label for="renouvelable">renouvelable :</label>
+              <input type="text" #renouvelable [(ngModel)]="contratcompteToUpdate.renouvelable" name="renouvelable" id="renouvelable" class="form-control"
+                placeholder="renouvelable">
+            </div>
+            <div class="form-group">
+              <label for="confirme">confirme :</label>
+              <input type="text" #confirme [(ngModel)]="contratcompteToUpdate.confirme" name="confirme" id="confirme"
+                class="form-control" placeholder=" confirme">
+            </div>
+            <div class="form-group">
+              <label for="dateCreation">dateCreation :</label>
+              <input type="date" #dateCreation [(ngModel)]="contratcompteToUpdate.dateCreation" name="dateCreation" id="dateCreation"
+                class="form-control" placeholder="dateCreation">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Modifier" class="btn btn-primary w-100">
+            </div>
+          </form> 
+        </div>
+  
+</div>
+ </div>
+  </div> 
+  
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    <!--        /#wrapper -->
+
+    

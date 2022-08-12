@@ -1,0 +1,118 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contrateng">Contrat</a></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+
+        <hr/>
+
+
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <div class="container-fluid">
+          <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+              <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="mt-4"> Engagement</h1>
+        <br/>
+        <p>Dans ce module, vous pouvez:</p>
+        <div class="list-group">
+          <li class="list-group-item list-group-item-action">⚙ Gérer les crédits</li>
+
+
+        </div>
+
+     
+  </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  <!-- /#wrapper -->

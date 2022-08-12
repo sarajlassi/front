@@ -1,0 +1,426 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Référentiel ➺ Client </h1>
+            </div>
+
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm1="ngForm"  (ngSubmit)="registerMor(registerForm1)" >
+
+                <p>En tant qu'une personne morale </p>
+<!--                <div class="form-group">
+                  <label for="type_client">Type du client:</label>
+                  <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                    placeholder="type_client">
+                </div> -->
+                <div class="form-group">
+                  <label for="matricule">Matricule:</label>
+                  <input type="text" #matricule (ngModel)="matricule" name="matricule" id="matricule" class="form-control"
+                    placeholder="matricule">
+                </div>
+                <div class="form-group">
+                  <label for="dateCreation">Date de création:</label>
+                  <input type="date" #dateCreation (ngModel)="dateCreation" name="dateCreation" id="dateCreation" class="form-control"
+                    placeholder="dateCreation">
+                </div>
+                <div class="form-group">
+                  <label for="libCou">Libellé Court:</label>
+                  <input type="text" #libCou (ngModel)="libCou" name="libCou" id="libCou" class="form-control"
+                    placeholder="libCou">
+                </div>
+                <div class="form-group">
+                  <label for="libLong">Libellé Long :</label>
+                  <input type="text" #libLong (ngModel)="libLong" name="libLong" id="libLong" class="form-control"
+                    placeholder="libLong">
+                </div>
+              <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100" >
+                </div>
+              </form>
+                <br/>
+                <p>En tant qu'une personne physique </p>
+                <form #registerForm="ngForm" (ngSubmit)="registerPhy(registerForm)">
+                  
+                <!--   <div class="form-group">
+                  <label for="type_client">Type du client:</label>
+                  <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                    placeholder="type_client">
+                </div> -->
+                <div class="form-group">
+                  <label for="cin">Cin:</label>
+                  <input type="text" #cin (ngModel)="cin" name="cin" id="cin" class="form-control"
+                    placeholder="cin">
+                </div>
+                <div class="form-group">
+                  <label for="prenom">Prénom:</label>
+                  <input type="text" #prenom (ngModel)="prenom" name="prenom" id="prenom" class="form-control"
+                    placeholder="prenom">
+                </div>
+                <div class="form-group">
+                  <label for="nom">Nom:</label>
+                  <input type="text" #nom (ngModel)="nom" name="nom" id="nom" class="form-control"
+                    placeholder="nom">
+                </div>
+                <div class="form-group">
+                  <label for="dateNaissance">Date de naissance:</label>
+                  <input type="date" #dateNaissance (ngModel)="dateNaissance" name="dateNaissance" id="dateNaissance" class="form-control"
+                    placeholder="dateNaissance">
+                </div>
+                <div class="form-group">
+                  <label for="emploi">Emploi :</label>
+                  <input type="text" #emploi (ngModel)="emploi" name="emploi" id="emploi" class="form-control"
+                    placeholder="emploi">
+                </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+             <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idClient</th> 
+                    <th>matricule</th>
+                    <th>dateCreation</th>  
+                    <th>libCou</th>
+                    <th>libLong</th>
+<!--                     <th colspan="2">Contact </th>
+                    <th colspan="2">Agence </th>
+                    <th colspan="2">Pays </th> 
+                    <th colspan="2">Compte </th>  -->
+                    <th>Modifier</th>
+                    <th>Supprimer</th> 
+
+
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+
+                   
+                  <tr *ngFor="let clientMor of clientMorDetails"> 
+                    
+                    
+                    <td>{{clientMor.idClient}}</td>
+                    <td>{{clientMor.matricule}}</td>
+                    <td>{{clientMor.dateCreation}}</td>
+                    <td>{{clientMor.libCou}}</td>
+                    <td>{{clientMor.libLong}}</td>
+                   <!--  <td>idContact</td>
+                    <td>telephone</td>
+                    <td>idAgence</td>
+                    <td>libLongAgence</td>
+                    <td>idPays</td>
+                    <td>nomPays</td>
+                    <td>numCompte</td>
+                    <td>rib</td> -->
+                    
+  
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModalMor"
+                        (click)="editMor(clientMor)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteClientMor(clientMor)">❌</button></td>
+                      
+                  </tr>  
+ 
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+                      
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>idClient</th> 
+                   <th>cin</th>
+                  <th>prenom</th>
+                  <th>nom</th>
+                  <th>dateNaissance</th>
+                  <th>emploi</th>  
+<!--                   <th colspan="2">Contact </th>    
+                  <th colspan="2">Agence </th> 
+                  <th colspan="2">Pays </th> 
+                  <th colspan="2">Compte </th>   -->               
+                  <th>Modifier</th>
+                  <th>Supprimer</th>  
+
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+
+                   <tr *ngFor="let clientPhy of clientPhyDetails">
+
+                    
+                    <td>{{clientPhy.idClient}}</td>
+                    <td>{{clientPhy.cin}}</td>
+                    <td>{{clientPhy.prenom}}</td>
+                    <td>{{clientPhy.nom}}</td>
+                    <td>{{clientPhy.dateNaissance}}</td>
+                    <td>{{clientPhy.emploi}}</td>
+<!--                     <td>idContact</td>
+                    <td>telephone</td>
+                    <td>idAgence</td>
+                    <td>libLongAgence</td>
+                    <td>idPays</td>
+                    <td>nomPays</td>
+                    <td>numCompte</td>
+                    <td>rib</td> -->
+
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModalPhy"
+                        (click)="editPhy(clientPhy)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteClientPhy(clientPhy)">❌</button></td>
+          
+                 
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        
+
+        <div class="mt-5">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>idAgence</th>
+                <th>codeInterne</th>
+                <th>libCou</th>
+                <th>libLong</th>                      
+
+
+              </tr>
+            </thead>
+            <tbody class="tbody">
+              <tr *ngFor="let agence of agenceDetails">
+                <td>{{agence.idAgence}}</td>
+                <td>{{agence.codeInterne}}</td>
+                <td>{{agence.libCou}}</td>
+                <td>{{agence.libLong}}</td>
+
+
+
+             
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     
+
+
+        <div class="modal" id="myModalPhy">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <div class="modal-header">
+                <h4 class="modal-title">Modifier client physique</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+              </div>
+
+
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateClientPhy()">
+          <div class="form-group">
+            <label for="idClient"> idClient :</label>
+            <input type="number" disabled="" #idClient [(ngModel)]="clientPhyToUpdate.idClient" name="idClient" id="idClient"
+              class="form-control" placeholder="idClient">
+          </div>
+          <div class="form-group">
+            <label for="cin">cin :</label>
+            <input type="text" #cin [(ngModel)]="clientPhyToUpdate.cin" name="cin" id="cin"
+              class="form-control" placeholder="cin">
+          </div>
+          <div class="form-group">
+            <label for="prenom">prenom :</label>
+            <input type="text" #prenom [(ngModel)]="clientPhyToUpdate.prenom" name="prenom" id="prenom" class="form-control"
+              placeholder="prenom">
+          </div>
+          <div class="form-group">
+            <label for="nom">nom :</label>
+            <input type="text" #nom [(ngModel)]="clientPhyToUpdate.nom" name="nom" id="nom"
+              class="form-control" placeholder=" nom">
+          </div>
+          <div class="form-group">
+            <label for="dateNaissance">dateNaissance :</label>
+            <input type="date" #dateNaissance [(ngModel)]="clientPhyToUpdate.dateNaissance" name="dateNaissance" id="dateNaissance" class="form-control"
+              placeholder="dateNaissance">
+          </div>
+          <div class="form-group">
+            <label for="emploi">emploi :</label>
+            <input type="text" #emploi [(ngModel)]="clientPhyToUpdate.emploi" name="emploi" id="emploi"
+              class="form-control" placeholder="emploi">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+
+      </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="modal" id="myModalMor">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">Modifier client moral</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal">
+          </button>
+        </div>
+  
+  
+  
+        <div class="modal-body">
+          <form #updateForm="ngForm" (ngSubmit)="updateClientMor()">
+            <div class="form-group">
+              <label for="idClient"> idClient :</label>
+              <input type="number" disabled="" #idClient [(ngModel)]="clientMorToUpdate.idClient" name="idClient" id="idClient"
+                class="form-control" placeholder="idClient">
+            </div>
+            <div class="form-group">
+              <label for="matricule">matricule :</label>
+              <input type="text" #matricule [(ngModel)]="clientMorToUpdate.matricule" name="matricule" id="matricule"
+                class="form-control" placeholder=" matricule">
+            </div>
+            <div class="form-group">
+              <label for="dateCreation">dateCreation :</label>
+              <input type="date" #dateCreation [(ngModel)]="clientMorToUpdate.dateCreation" name="dateCreation" id="dateCreation" class="form-control"
+                placeholder="dateCreation">
+            </div>
+            <div class="form-group">
+              <label for="libCou">libCou :</label>
+              <input type="text" #libCou [(ngModel)]="clientMorToUpdate.libCou" name="libCou" id="libCou"
+                class="form-control" placeholder=" libCou">
+            </div>
+            <div class="form-group">
+              <label for="libLong">libLong :</label>
+              <input type="text" #libLong [(ngModel)]="clientMorToUpdate.libLong" name="libLong" id="libLong"
+                class="form-control" placeholder="libLong">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Modifier" class="btn btn-primary w-100">
+            </div>
+          </form> 
+        </div>
+  
+</div>
+ </div>
+  </div> 
+  
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    <!--        /#wrapper -->
+
+    

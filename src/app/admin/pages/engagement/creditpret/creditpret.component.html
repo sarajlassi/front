@@ -1,0 +1,262 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Engagement ➺ Crédit prêt</h1>
+            </div>
+       
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+
+                <div class="form-group">
+                  <label for="tauxProgression">Taux de progression:</label>
+                  <input type="number" #tauxProgression (ngModel)="tauxProgression" name="tauxProgression" id="tauxProgression" class="form-control"
+                    placeholder="tauxProgression">
+                </div>
+                <div class="form-group">
+                  <label for="datePremiereTranche">Date de premiére tranche:</label>
+                  <input type="date" #datePremiereTranche (ngModel)="datePremiereTranche" name="datePremiereTranche" id="datePremiereTranche" class="form-control"
+                    placeholder="datePremiereTranche">
+                </div>
+                <div class="form-group">
+                  <label for="estReporte">Reporté:</label>
+                  <input type="text" #estReporte (ngModel)="estReporte" name="estReporte" id="estReporte" class="form-control"
+                    placeholder="estReporte">
+                </div>
+                <div class="form-group">
+                  <label for="estRenouvelable">Renouvelable:</label>
+                  <input type="text" #estRenouvelable (ngModel)="estRenouvelable" name="estRenouvelable" id="estRenouvelable" class="form-control"
+                    placeholder="estRenouvelable">
+                </div>
+                <div class="form-group">
+                  <label for="dateEmission">Date d'émission:</label>
+                  <input type="date" #dateEmission (ngModel)="dateEmission" name="dateEmission" id="dateEmission" class="form-control"
+                    placeholder="dateEmission">
+                </div>
+                <div class="form-group">
+                  <label for="dateExpiration">Date d'éxpiration:</label>
+                  <input type="date" #dateExpiration (ngModel)="dateExpiration" name="dateExpiration" id="dateExpiration" class="form-control"
+                    placeholder="dateExpiration">
+                </div>
+                <div class="form-group">
+                  <label for="calAssurance">calAssurance:</label>
+                  <input type="text" #calAssurance (ngModel)="calAssurance" name="calAssurance" id="calAssurance" class="form-control"
+                    placeholder="calAssurance">
+                </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+
+            
+            <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idContrat</th>
+                    <th>tauxProgression</th>
+                    <th>datePremiereTranche</th>
+                    <th>estReporte</th>
+                    <th>estRenouvelable</th>
+                    <th>dateEmission</th>
+                    <th>dateExpiration</th>
+                    <th>calAssurance</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr *ngFor="let creditpret of creditpretDetails">
+                    <td>{{creditpret.idContrat}}</td>
+                    <td>{{creditpret.tauxProgression}}</td>
+                    <td>{{creditpret.datePremiereTranche}}</td>
+                    <td>{{creditpret.estReporte}}</td>
+                    <td>{{creditpret.estRenouvelable}}</td>
+                    <td>{{creditpret.dateEmission}}</td>
+                    <td>{{creditpret.dateExpiration}}</td>
+                    <td>{{creditpret.calAssurance}}</td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal"
+                        (click)="edit(creditpret)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteCreditpret(creditpret)">❌</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modifier crédit prêt</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateCreditpret()">
+          <div class="form-group">
+            <label for="idContrat"> idContrat :</label>
+            <input type="number" disabled="" #idContrat [(ngModel)]="creditpretToUpdate.idContrat" name="idContrat" id="idContrat"
+              class="form-control" placeholder="idContrat">
+          </div>
+          <div class="form-group">
+            <label for="tauxProgression">tauxProgression :</label>
+            <input type="number" #tauxProgression [(ngModel)]="creditpretToUpdate.tauxProgression" name="tauxProgression" id="tauxProgression" class="form-control"
+              placeholder="tauxProgression">
+          </div>
+          <div class="form-group">
+            <label for="datePremiereTranche">datePremiereTranche :</label>
+            <input type="date" #datePremiereTranche [(ngModel)]="creditpretToUpdate.datePremiereTranche" name="datePremiereTranche" id="datePremiereTranche"
+              class="form-control" placeholder=" datePremiereTranche">
+          </div>
+          <div class="form-group">
+            <label for="estReporte">estReporte :</label>
+            <input type="text" #estReporte [(ngModel)]="creditpretToUpdate.estReporte" name="estReporte" id="estReporte"
+              class="form-control" placeholder="estReporte">
+          </div>
+          <div class="form-group">
+            <label for="estRenouvelable"> estRenouvelable :</label>
+            <input type="text" #estRenouvelable [(ngModel)]="creditpretToUpdate.estRenouvelable" name="estRenouvelable" id="estRenouvelable"
+              class="form-control" placeholder="estRenouvelable">
+          </div>
+          <div class="form-group">
+            <label for="dateEmission">dateEmission :</label>
+            <input type="date" #dateEmission [(ngModel)]="creditpretToUpdate.dateEmission" name="dateEmission" id="dateEmission" class="form-control"
+              placeholder="dateEmission">
+          </div>
+          <div class="form-group">
+            <label for="dateExpiration">dateExpiration :</label>
+            <input type="date" #dateExpiration [(ngModel)]="creditpretToUpdate.dateExpiration" name="dateExpiration" id="dateExpiration"
+              class="form-control" placeholder="dateExpiration">
+          </div>
+          <div class="form-group">
+            <label for="calAssurance">calAssurance :</label>
+            <input type="text" #calAssurance [(ngModel)]="creditpretToUpdate.calAssurance" name="calAssurance" id="calAssurance"
+              class="form-control" placeholder="calAssurance">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!--        /#wrapper -->
+
+    

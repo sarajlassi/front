@@ -1,0 +1,272 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Dave ➺ Solde du compte </h1>
+            </div>
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+
+                <div class="form-group">
+                  <label for="datePosition">Date de position:</label>
+                  <input type="date" #datePosition (ngModel)="datePosition" name="datePosition" id="datePosition" class="form-control"
+                    placeholder="datePosition">
+                </div>
+                <div class="form-group">
+                  <label for="dateFin">Date de fin:</label>
+                  <input type="date" #dateFin (ngModel)="dateFin" name="dateFin" id="dateFin" class="form-control"
+                    placeholder="dateFin">
+                </div>
+                <div class="form-group">
+                  <label for="montBloq">Montant bloqué :</label>
+                  <input type="number" #montBloq (ngModel)="montBloq" name="montBloq" id="montBloq" class="form-control"
+                    placeholder="montBloq">
+                </div>
+                <div class="form-group">
+                  <label for="montDecouv">Montant de découverte :</label>
+                  <input type="number" #montDecouv (ngModel)="montDecouv" name="montDecouv" id="montDecouv" class="form-control"
+                    placeholder="montDecouv">
+                </div>
+                <div class="form-group">
+                  <label for="montMoratoire">Montant moratoire :</label>
+                  <input type="number" #montMoratoire (ngModel)="montMoratoire" name="montMoratoire" id="montMoratoire" class="form-control"
+                    placeholder="montMoratoire">
+                </div>
+                <div class="form-group">
+                  <label for="creditMvt">Crédit :</label>
+                  <input type="number" #creditMvt (ngModel)="creditMvt" name="creditMvt" id="creditMvt" class="form-control"
+                    placeholder="creditMvt">
+                </div>
+                <div class="form-group">
+                  <label for="debitMvt">Débit :</label>
+                  <input type="number" #debitMvt (ngModel)="debitMvt" name="debitMvt" id="debitMvt" class="form-control"
+                    placeholder="debitMvt">
+                </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+           
+
+            
+            <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idSoldeCompte</th>
+                    <th>datePosition</th>
+                    <th>dateFin</th>
+                    <th>montBloq</th> 
+                    <th>montDecouv</th>
+                    <th>montMoratoire</th>
+                    <th>creditMvt</th>
+                    <th>debitMvt</th>                      
+                    <!-- <th colspan="3">Contact </th> -->
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr *ngFor="let solde of soldeDetails">
+                    <td>{{solde.idSoldeCompte}}</td>
+                    <td>{{solde.datePosition}}</td>
+                    <td>{{solde.dateFin}}</td>
+                    <td>{{solde.montBloq}}</td>
+                    <td>{{solde.montDecouv}}</td>
+                    <td>{{solde.montMoratoire}}</td>
+                    <td>{{solde.creditMvt}}</td>
+                    <td>{{solde.debitMvt}}</td>
+<!--                     <td>idContact</td>
+                    <td>adresse</td>
+                    <td>telephone</td> -->
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal"
+                        (click)="edit(solde)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteSolde(solde)">❌</button></td>
+              
+
+                 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modifier solde</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateSolde()">
+          <div class="form-group">
+            <label for="idSoldeCompte"> idSoldeCompte :</label>
+            <input type="number" disabled="" #idSoldeCompte [(ngModel)]="soldeToUpdate.idSoldeCompte" name="idSoldeCompte" id="idSoldeCompte"
+              class="form-control" placeholder="idSoldeCompte">
+          </div>
+          <div class="form-group">
+            <label for="datePosition">datePosition :</label>
+            <input type="date" #datePosition [(ngModel)]="soldeToUpdate.datePosition" name="datePosition" id="datePosition" class="form-control"
+              placeholder="datePosition">
+          </div>
+          <div class="form-group">
+            <label for="dateFin">dateFin :</label>
+            <input type="date" #dateFin [(ngModel)]="soldeToUpdate.dateFin" name="dateFin" id="dateFin"
+              class="form-control" placeholder=" dateFin">
+          </div>
+          <div class="form-group">
+            <label for="montBloq">montBloq :</label>
+            <input type="number" #montBloq [(ngModel)]="soldeToUpdate.montBloq" name="montBloq" id="montBloq"
+              class="form-control" placeholder="montBloq">
+          </div>
+          <div class="form-group">
+            <label for="montDecouv"> montDecouv :</label>
+            <input type="number" #montDecouv [(ngModel)]="soldeToUpdate.montDecouv" name="montDecouv" id="montDecouv"
+              class="form-control" placeholder="montDecouv">
+          </div>
+          <div class="form-group">
+            <label for="montMoratoire">montMoratoire :</label>
+            <input type="number" #montMoratoire [(ngModel)]="soldeToUpdate.montMoratoire" name="montMoratoire" id="montMoratoire" class="form-control"
+              placeholder="montMoratoire">
+          </div>
+          <div class="form-group">
+            <label for="creditMvt">creditMvt :</label>
+            <input type="number" #creditMvt [(ngModel)]="soldeToUpdate.creditMvt" name="creditMvt" id="creditMvt"
+              class="form-control" placeholder=" creditMvt">
+          </div>
+          <div class="form-group">
+            <label for="debitMvt">debitMvt :</label>
+            <input type="number" #debitMvt [(ngModel)]="soldeToUpdate.debitMvt" name="debitMvt" id="debitMvt"
+              class="form-control" placeholder="debitMvt">
+          </div>
+
+
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!--        /#wrapper -->
+
+    

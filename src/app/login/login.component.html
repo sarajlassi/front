@@ -1,0 +1,18 @@
+<div class="limit">
+    <div class="login-container">
+        <div class="bb-login">
+            <form #loginForm="ngForm"  (ngSubmit)="login(loginForm)" > 
+                <span class="bb-form-title p-b-26">Connexion </span> 
+                <span class="bb-form-title p-b-48"> <i class="mdi mdi-symfony"></i> </span>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c"> <input class="input100" type="text" name="userEmail" id="userEmail" ngModel> <span class="bbb-input" data-placeholder="Email"></span> </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">   <input class="input100" type="password" name="userPassword" id="userPassword" ngModel> <span class="bbb-input" data-placeholder="Mot de passe"></span> </div>
+                <div class="login-container-form-btn">
+                    <div class="bb-login-form-btn">
+                        <div class="bb-form-bgbtn"></div> <button class="bb-form-btn" value="Login"> Se connecter </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  

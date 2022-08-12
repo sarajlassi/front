@@ -1,0 +1,264 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Référentiel ➺ Pays</h1>
+            </div>
+
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+
+                <div class="form-group">
+                  <label for="codeTelephoniqueRegional">Code téléphonique Régional:</label>
+                  <input type="text" #codeTelephoniqueRegional (ngModel)="codeTelephoniqueRegional" name="codeTelephoniqueRegional" id="codeTelephoniqueRegional" class="form-control"
+                    placeholder="codeTelephoniqueRegional">
+                </div>
+                <div class="form-group">
+                  <label for="nom">Nom:</label>
+                  <input type="text" #nom (ngModel)="nom" name="nom" id="nom" class="form-control"
+                    placeholder="nom">
+                </div>
+                <div class="form-group">
+                  <label for="codeNumerique">Code numérique:</label>
+                  <input type="text" #codeNumerique (ngModel)="codeNumerique" name="codeNumerique" id="codeNumerique" class="form-control"
+                    placeholder="codeNumerique">
+                </div>
+                <div class="form-group">
+                  <label for="nomTraduit">Nom Traduit:</label>
+                  <input type="text" #nomTraduit (ngModel)="nomTraduit" name="nomTraduit" id="nomTraduit" class="form-control"
+                    placeholder="nomTraduit">
+                </div>
+                <div class="form-group">
+                  <label for="nationalite">Nationalité:</label>
+                  <input type="text" #nationalite (ngModel)="nationalite" name="nationalite" id="nationalite" class="form-control"
+                    placeholder="nationalite">
+                </div>
+                <div class="form-group">
+                  <label for="conventionFiscale">Convention Fiscale:</label>
+                  <input type="text" #conventionFiscale (ngModel)="conventionFiscale" name="conventionFiscale" id="conventionFiscale" class="form-control"
+                    placeholder="conventionFiscale">
+                </div>
+                <div class="form-group">
+                  <label for="embargo">Embargo:</label>
+                  <input type="text" #embargo (ngModel)="embargo" name="embargo" id="embargo" class="form-control"
+                    placeholder="embargo">
+                </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+           
+
+            
+            <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idPays</th>
+                    <th>codeTelephoniqueRegional</th>
+                    <th>nom</th>
+                    <th>codeNumerique</th>
+                    <th>nomTraduit</th>
+                    <th>nationalite</th>
+                    <th>conventionFiscale</th>
+                    <th>embargo</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr *ngFor="let pays of paysDetails">
+                    <td>{{pays.idPays}}</td>
+                    <td>{{pays.codeTelephoniqueRegional}}</td>
+                    <td>{{pays.nom}}</td>
+                    <td>{{pays.codeNumerique}}</td>
+                    <td>{{pays.nomTraduit}}</td>
+                    <td>{{pays.nationalite}}</td>
+                    <td>{{pays.conventionFiscale}}</td>
+                    <td>{{pays.embargo}}</td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal"
+                        (click)="edit(pays)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deletePays(pays)">❌</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modifier pays</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updatePays()">
+          <div class="form-group">
+            <label for="idPays"> idPays :</label>
+            <input type="number" disabled="" #idPays [(ngModel)]="paysToUpdate.idPays" name="idPays" id="idPays"
+              class="form-control" placeholder="idPays">
+          </div>
+          <div class="form-group">
+            <label for="codeTelephoniqueRegional">codeTelephoniqueRegional :</label>
+            <input type="text" #codeTelephoniqueRegional [(ngModel)]="paysToUpdate.codeTelephoniqueRegional" name="codeTelephoniqueRegional" id="codeTelephoniqueRegional" class="form-control"
+              placeholder="codeTelephoniqueRegional">
+          </div>
+          <div class="form-group">
+            <label for="nom">nom :</label>
+            <input type="text" #nom [(ngModel)]="paysToUpdate.nom" name="nom" id="nom"
+              class="form-control" placeholder=" nom">
+          </div>
+          <div class="form-group">
+            <label for="codeNumerique">codeNumerique :</label>
+            <input type="text" #codeNumerique [(ngModel)]="paysToUpdate.codeNumerique" name="codeNumerique" id="codeNumerique"
+              class="form-control" placeholder="codeNumerique">
+          </div>
+          <div class="form-group">
+            <label for="nomTraduit"> nomTraduit :</label>
+            <input type="text" #nomTraduit [(ngModel)]="paysToUpdate.nomTraduit" name="nomTraduit" id="nomTraduit"
+              class="form-control" placeholder="nomTraduit">
+          </div>
+          <div class="form-group">
+            <label for="nationalite">nationalite :</label>
+            <input type="text" #nationalite [(ngModel)]="paysToUpdate.nationalite" name="nationalite" id="nationalite" class="form-control"
+              placeholder="nationalite">
+          </div>
+          <div class="form-group">
+            <label for="conventionFiscale">conventionFiscale :</label>
+            <input type="text" #conventionFiscale [(ngModel)]="paysToUpdate.conventionFiscale" name="conventionFiscale" id="conventionFiscale"
+              class="form-control" placeholder="conventionFiscale">
+          </div>
+          <div class="form-group">
+            <label for="embargo">embargo :</label>
+            <input type="text" #embargo [(ngModel)]="paysToUpdate.embargo" name="embargo" id="embargo"
+              class="form-control" placeholder="embargo">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!--        /#wrapper -->
+
+    

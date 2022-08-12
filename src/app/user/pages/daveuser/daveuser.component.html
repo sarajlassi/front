@@ -1,0 +1,202 @@
+
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+      <div class="btn-group shadow-0">
+              <button type="button" class="btn btn-light" routerLink="/referentieluser">
+                Référentiel
+              </button>
+      </div>
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light" routerLink="/daveuser">
+          Dave
+        </button>
+</div>
+        <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light" routerLink="/engagementuser">
+          Engagement
+        </button>
+</div>
+<hr/>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     
+      <div class="container-fluid">
+        <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+            <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="card mt-5" style="align-items: center;">
+        <h1>Dave </h1>
+      </div>
+      <br/>
+    
+
+      <br/><br/>
+    <!-- Button trigger modal -->
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+➕ Ajouter un compte
+</button>
+<br/><br/>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Ajouter un compte</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="card mt-5" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+          <div class="form-group">
+            <label for="numCompte">Numéro du compte:</label>
+            <input type="text" #numCompte (ngModel)="numCompte" name="numCompte" id="numCompte" class="form-control"
+              placeholder="numCompte">
+          </div>
+          <div class="form-group">
+            <label for="rib">rib:</label>
+            <input type="text" #rib (ngModel)="rib" name="rib" id="rib" class="form-control"
+              placeholder="rib">
+          </div>
+          <div class="form-group">
+            <label for="typeCompte">Type du compte:</label>
+            <input type="text" #typeCompte (ngModel)="typeCompte" name="typeCompte" id="typeCompte" class="form-control"
+              placeholder="typeCompte">
+          </div>
+          <div class="form-group">
+            <label for="codeProduit">Code du produit :</label>
+            <input type="text" #codeProduit (ngModel)="codeProduit" name="codeProduit" id="codeProduit" class="form-control"
+              placeholder="codeProduit">
+          </div>
+          <div class="form-group">
+            <label for="codeCategoryProduit">Code category du produit :</label>
+            <input type="text" #codeCategoryProduit (ngModel)="codeCategoryProduit" name="codeCategoryProduit" id="codeCategoryProduit" class="form-control"
+              placeholder="codeCategoryProduit">
+          </div>
+          <div class="form-group">
+            <label for="active">Active :</label>
+            <input type="text" #active (ngModel)="active" name="active" id="active" class="form-control"
+              placeholder="active">
+          </div>
+          <div class="form-group">
+            <label for="dateActivation">Date d'activation :</label>
+            <input type="date" #dateActivation (ngModel)="dateActivation" name="dateActivation" id="dateActivation" class="form-control"
+              placeholder="dateActivation">
+          </div>
+          <div class="form-group">
+            <label for="ribInternal">rib International :</label>
+            <input type="text" #ribInternal (ngModel)="ribInternal" name="ribInternal" id="ribInternal" class="form-control"
+              placeholder="ribInternal">
+          </div>
+          <br/>
+          <div class="form-group">
+            <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+          </div>
+        </form>
+      </div>
+        </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+</div>
+</div>
+<br/>
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+<button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">
+❌ Supprimer un compte
+</button>
+<br/><br/>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Supprimer un compte</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <div class="form-group">
+
+        <label for="numCompte">Taper le numéro de compte:</label>
+        <input type="text" #numCompte (ngModel)="numCompte" name="numCompte" id="numCompte" class="form-control"
+          placeholder="numCompte">
+          <br/>
+
+          <p *ngFor="let compteBank of comptedaveDetails">
+            Le numéro du compte est le suivant: {{compteBank.numCompte}}
+           <button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteComptedave(compteBank)">Supprimer</button> 
+          </p> 
+          </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+    
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+    
+     
+ </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->

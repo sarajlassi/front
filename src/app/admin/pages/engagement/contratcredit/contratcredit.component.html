@@ -1,0 +1,538 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Engagement ➺ Contrat du crédit </h1>
+            </div>
+
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm1="ngForm"  (ngSubmit)="registerContrat(registerForm1)" >
+
+                <p>Remplissez le formulaire pour ajouter un nouveau contrat </p>
+<!--                <div class="form-group">
+                  <label for="type_client">Type du client:</label>
+                  <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                    placeholder="type_client">
+                </div> -->
+                <div class="form-group">
+                  <label for="statusContrat">Status du contrat:</label>
+                  <input type="text" #statusContrat (ngModel)="statusContrat" name="statusContrat" id="statusContrat" class="form-control"
+                    placeholder="statusContrat">
+                </div>
+                <div class="form-group">
+                  <label for="reference">Référence:</label>
+                  <input type="text" #reference (ngModel)="reference" name="reference" id="reference" class="form-control"
+                    placeholder="reference">
+                </div>
+                <div class="form-group">
+                  <label for="renevable">Renouvelable:</label>
+                  <input type="text" #renevable (ngModel)="renevable" name="renevable" id="renevable" class="form-control"
+                    placeholder="renevable">
+                </div>
+                <div class="form-group">
+                  <label for="dateDebut">Date de début:</label>
+                  <input type="date" #dateDebut (ngModel)="dateDebut" name="dateDebut" id="dateDebut" class="form-control"
+                    placeholder="dateDebut">
+                </div>
+                <div class="form-group">
+                  <label for="dateFin">Date de fin:</label>
+                  <input type="date" #dateFin (ngModel)="dateFin" name="dateFin" id="dateFin" class="form-control"
+                    placeholder="dateFin">
+                </div>
+                <div class="form-group">
+                  <label for="active">Active:</label>
+                  <input type="text" #active (ngModel)="active" name="active" id="active" class="form-control"
+                    placeholder="active">
+                </div>
+                <div class="form-group">
+                  <label for="infoConvention">Informations de convention:</label>
+                  <input type="text" #infoConvention (ngModel)="infoConvention" name="infoConvention" id="infoConvention" class="form-control"
+                    placeholder="infoConvention">
+                </div>
+              <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100" >
+                </div>
+              </form>
+                <br/>
+                <p>Remplissez le formulaire pour ajouter un nouveau contrat du crédit </p>
+                <form #registerForm="ngForm" (ngSubmit)="registerContratcredit(registerForm)">
+                  
+                <!--   <div class="form-group">
+                  <label for="type_client">Type du client:</label>
+                  <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                    placeholder="type_client">
+                </div> -->
+
+
+                <div class="form-group">
+                  <label for="riskInterneEncouru">Risque interne encouru:</label>
+                  <input type="number" #riskInterneEncouru (ngModel)="riskInterneEncouru" name="riskInterneEncouru" id="riskInterneEncouru" class="form-control"
+                    placeholder="riskInterneEncouru">
+                </div>
+                <div class="form-group">
+                  <label for="riskLegalEncouru">Risque légal encouru:</label>
+                  <input type="number" #riskLegalEncouru (ngModel)="riskLegalEncouru" name="riskLegalEncouru" id="riskLegalEncouru" class="form-control"
+                    placeholder="riskLegalEncouru">
+                </div>
+                <div class="form-group">
+                  <label for="ribCompte">Rib du compte:</label>
+                  <input type="text" #ribCompte (ngModel)="ribCompte" name="ribCompte" id="ribCompte" class="form-control"
+                    placeholder="ribCompte">
+                </div>
+                <div class="form-group">
+                  <label for="montantAffecte">Montant affecte:</label>
+                  <input type="number" #montantAffecte (ngModel)="montantAffecte" name="montantAffecte" id="montantAffecte" class="form-control"
+                    placeholder="montantAffecte">
+                </div>
+                <div class="form-group">
+                  <label for="changeClasse">Changer de  classe :</label>
+                  <input type="text" #changeClasse (ngModel)="changeClasse" name="changeClasse" id="changeClasse" class="form-control"
+                    placeholder="changeClasse">
+                </div>
+                <div class="form-group">
+                <label for="dateSituation">Date de situation:</label>
+                <input type="date" #dateSituation (ngModel)="dateSituation" name="dateSituation" id="dateSituation" class="form-control"
+                  placeholder="dateSituation">
+                </div>
+              <div class="form-group">
+                <label for="reclassementManuel">Reclassement manuel:</label>
+                <input type="text" #reclassementManuel (ngModel)="reclassementManuel" name="reclassementManuel" id="reclassementManuel" class="form-control"
+                  placeholder="reclassementManuel">
+              </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+             <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idContrat</th> 
+                    <th>statusContrat</th>
+                    <th>reference</th>  
+                    <th>renevable</th>
+                    <th>dateDebut</th>
+                    <th>dateFin</th>
+                    <th>active</th>
+                    <th>infoConvention</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th> 
+
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+
+                   
+                  <tr *ngFor="let contrat of contratDetails and let clientMor of clientMorDetails and let clientPhy of clientPhyDetails"> 
+                    
+                    
+                    <td>{{contrat.idContrat}}</td>
+                    <td>{{contrat.statusContrat}}</td>
+                    <td>{{contrat.reference}}</td>
+                    <td>{{contrat.renevable}}</td>
+                    <td>{{contrat.dateDebut}}</td>
+                    <td>{{contrat.dateFin}}</td>
+                    <td>{{contrat.active}}</td>
+                    <td>{{contrat.infoConvention}}</td>
+
+
+                    
+  
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModalPhy"
+                        (click)="editContrat(contrat)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteContrat(contrat)">❌</button></td>
+                      
+                  </tr>  
+ 
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+   
+                  
+                  <th>idClient</th> 
+                  <th>matricule</th>  
+                  <th>dateCreation</th> 
+                  <th>libLong</th>
+                  <th>libCou</th>
+
+
+
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+                 
+                <tr *ngFor="let clientMor of clientMorDetails"> 
+                  
+                  
+
+
+                  <td>{{clientMor.idClient}}</td>
+                  <td>{{clientMor.matricule}}</td>
+                  <td>{{clientMor.dateCreation}}</td>
+                  <td>{{clientMor.libCou}}</td>
+                  <td>{{clientMor.libLong}}</td>
+      
+
+                 <!--  <td>idContact</td>
+                  <td>telephone</td>
+                  <td>idAgence</td>
+                  <td>libLongAgence</td>
+                  <td>idPays</td>
+                  <td>nomPays</td>
+                  <td>numCompte</td>
+                  <td>rib</td> -->
+
+                </tr>  
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+   
+
+                  <th>idClientPhysique</th>
+                  <th>cin</th>
+                  <th>prenom</th>
+                  <th>nom</th>
+                  <th>dateNaissance</th>
+                  <th>emploi</th> 
+
+
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+                 
+                <tr *ngFor="let clientPhy of clientPhyDetails"> 
+
+                  <td>{{clientPhy.idClient}}</td>
+                  <td>{{clientPhy.cin}}</td>
+                  <td>{{clientPhy.prenom}}</td>
+                  <td>{{clientPhy.nom}}</td>
+                  <td>{{clientPhy.dateNaissance}}</td>
+                  <td>{{clientPhy.emploi}}</td>
+
+                 <!--  <td>idContact</td>
+                  <td>telephone</td>
+                  <td>idAgence</td>
+                  <td>libLongAgence</td>
+                  <td>idPays</td>
+                  <td>nomPays</td>
+                  <td>numCompte</td>
+                  <td>rib</td> -->
+
+                </tr>  
+
+              </tbody>
+            </table>
+          </div>
+
+                      
+
+          <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>idContrat</th> 
+                  <th>riskInterneEncouru</th>
+                  <th>riskLegalEncouru</th>
+                  <th>ribCompte</th>
+                  <th>montantAffecte</th>
+                  <th>changeClasse</th>  
+                  <th>dateSituation</th>
+                  <th>reclassementManuel</th>             
+                  <th>Modifier</th>
+                  <th>Supprimer</th>  
+
+                </tr>
+              </thead>
+              <tbody class="tbody">
+
+
+                   <tr *ngFor="let contratcredit of contratcreditDetails">
+
+                    
+                    <td>{{contratcredit.idContrat}}</td>
+                    <td>{{contratcredit.riskInterneEncouru}}</td>
+                    <td>{{contratcredit.riskLegalEncouru}}</td>
+                    <td>{{contratcredit.ribCompte}}</td>
+                    <td>{{contratcredit.montantAffecte}}</td>
+                    <td>{{contratcredit.changeClasse}}</td>
+                    <td>{{contratcredit.dateSituation}}</td>
+                    <td>{{contratcredit.reclassementManuel}}</td>
+
+<!--                     <td>idContact</td>
+                    <td>telephone</td>
+                    <td>idAgence</td>
+                    <td>libLongAgence</td>
+                    <td>idPays</td>
+                    <td>nomPays</td>
+                    <td>numCompte</td>
+                    <td>rib</td> -->
+
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModalMor"
+                        (click)="editContratcredit(contratcredit)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteContratcredit(contratcredit)">❌</button></td>
+          
+                 
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <div class="modal" id="myModalPhy">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <div class="modal-header">
+                <h4 class="modal-title">Modifier contrat</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+              </div>
+
+
+
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateContrat()">
+          <div class="form-group">
+            <label for="idContrat"> idContrat :</label>
+            <input type="number" disabled="" #idContrat [(ngModel)]="contratToUpdate.idContrat" name="idContrat" id="idContrat"
+              class="form-control" placeholder="idContrat">
+          </div>
+          <div class="form-group">
+            <label for="statusContrat">statusContrat :</label>
+            <input type="text" #statusContrat [(ngModel)]="contratToUpdate.statusContrat" name="statusContrat" id="statusContrat"
+              class="form-control" placeholder="statusContrat">
+          </div>
+          <div class="form-group">
+            <label for="reference">reference :</label>
+            <input type="text" #reference [(ngModel)]="contratToUpdate.reference" name="reference" id="reference" class="form-control"
+              placeholder="reference">
+          </div>
+          <div class="form-group">
+            <label for="renevable">renevable :</label>
+            <input type="text" #renevable [(ngModel)]="contratToUpdate.renevable" name="renevable" id="renevable"
+              class="form-control" placeholder="renevable">
+          </div>
+          <div class="form-group">
+            <label for="dateDebut">dateDebut :</label>
+            <input type="date" #dateDebut [(ngModel)]="contratToUpdate.dateDebut" name="dateDebut" id="dateDebut" class="form-control"
+              placeholder="dateDebut">
+          </div>
+          <div class="form-group">
+            <label for="dateFin">dateFin :</label>
+            <input type="date" #dateFin [(ngModel)]="contratToUpdate.dateFin" name="dateFin" id="dateFin"
+              class="form-control" placeholder="dateFin">
+          </div>
+          <div class="form-group">
+            <label for="active">active :</label>
+            <input type="text" #dateNaissance [(ngModel)]="contratToUpdate.active" name="active" id="active" class="form-control"
+              placeholder="active">
+          </div>
+          <div class="form-group">
+            <label for="infoConvention">infoConvention :</label>
+            <input type="text" #infoConvention [(ngModel)]="contratToUpdate.infoConvention" name="infoConvention" id="infoConvention"
+              class="form-control" placeholder="infoConvention">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+
+      </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="modal" id="myModalMor">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">Modifier contrat du crédit</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal">
+          </button>
+        </div>
+
+  
+        <div class="modal-body">
+          <form #updateForm="ngForm" (ngSubmit)="updateContratcredit()">
+            <div class="form-group">
+              <label for="idContrat"> idContrat :</label>
+              <input type="number" disabled="" #idContrat [(ngModel)]="contratcreditToUpdate.idContrat" name="idContrat" id="idContrat"
+                class="form-control" placeholder="idContrat">
+            </div>
+            <div class="form-group">
+              <label for="riskInterneEncouru">riskInterneEncouru :</label>
+              <input type="number" #riskInterneEncouru [(ngModel)]="contratcreditToUpdate.riskInterneEncouru" name="riskInterneEncouru" id="riskInterneEncouru"
+                class="form-control" placeholder="riskInterneEncouru">
+            </div>
+            <div class="form-group">
+              <label for="riskLegalEncouru">riskLegalEncouru :</label>
+              <input type="number" #riskLegalEncouru [(ngModel)]="contratcreditToUpdate.riskLegalEncouru" name="riskLegalEncouru" id="riskLegalEncouru" class="form-control"
+                placeholder="riskLegalEncouru">
+            </div>
+            <div class="form-group">
+              <label for="ribCompte">ribCompte :</label>
+              <input type="text" #ribCompte [(ngModel)]="contratcreditToUpdate.ribCompte" name="ribCompte" id="ribCompte"
+                class="form-control" placeholder="ribCompte">
+            </div>
+            <div class="form-group">
+              <label for="montantAffecte">montantAffecte :</label>
+              <input type="number" #montantAffecte [(ngModel)]="contratcreditToUpdate.montantAffecte" name="montantAffecte" id="montantAffecte"
+                class="form-control" placeholder="montantAffecte">
+            </div>
+            <div class="form-group">
+              <label for="changeClasse">changeClasse :</label>
+              <input type="text" #changeClasse [(ngModel)]="contratcreditToUpdate.changeClasse" name="changeClasse" id="changeClasse" class="form-control"
+                placeholder="changeClasse">
+            </div>
+            <div class="form-group">
+              <label for="dateSituation">dateSituation :</label>
+              <input type="date" #dateSituation [(ngModel)]="contratcreditToUpdate.dateSituation" name="dateSituation" id="dateSituation"
+                class="form-control" placeholder=" dateSituation">
+            </div>
+            <div class="form-group">
+              <label for="reclassementManuel">reclassementManuel :</label>
+              <input type="text" #reclassementManuel [(ngModel)]="contratcreditToUpdate.reclassementManuel" name="reclassementManuel" id="reclassementManuel"
+                class="form-control" placeholder="reclassementManuel">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Modifier" class="btn btn-primary w-100">
+            </div>
+          </form> 
+        </div>
+  
+</div>
+ </div>
+  </div> 
+  
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    <!--        /#wrapper -->
+
+    

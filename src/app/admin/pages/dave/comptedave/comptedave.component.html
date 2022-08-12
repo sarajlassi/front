@@ -1,0 +1,276 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Dave ➺ Compte bancaire </h1>
+            </div>
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+                <div class="form-group">
+                  <label for="numCompte">Numéro du compte:</label>
+                  <input type="text" #numCompte (ngModel)="numCompte" name="numCompte" id="numCompte" class="form-control"
+                    placeholder="numCompte">
+                </div>
+                <div class="form-group">
+                  <label for="rib">rib:</label>
+                  <input type="text" #rib (ngModel)="rib" name="rib" id="rib" class="form-control"
+                    placeholder="rib">
+                </div>
+                <div class="form-group">
+                  <label for="typeCompte">Type du compte:</label>
+                  <input type="text" #typeCompte (ngModel)="typeCompte" name="typeCompte" id="typeCompte" class="form-control"
+                    placeholder="typeCompte">
+                </div>
+                <div class="form-group">
+                  <label for="codeProduit">Code du produit :</label>
+                  <input type="text" #codeProduit (ngModel)="codeProduit" name="codeProduit" id="codeProduit" class="form-control"
+                    placeholder="codeProduit">
+                </div>
+                <div class="form-group">
+                  <label for="codeCategoryProduit">Code category du produit :</label>
+                  <input type="text" #codeCategoryProduit (ngModel)="codeCategoryProduit" name="codeCategoryProduit" id="codeCategoryProduit" class="form-control"
+                    placeholder="codeCategoryProduit">
+                </div>
+                <div class="form-group">
+                  <label for="active">Active :</label>
+                  <input type="text" #active (ngModel)="active" name="active" id="active" class="form-control"
+                    placeholder="active">
+                </div>
+                <div class="form-group">
+                  <label for="dateActivation">Date d'activation :</label>
+                  <input type="date" #dateActivation (ngModel)="dateActivation" name="dateActivation" id="dateActivation" class="form-control"
+                    placeholder="dateActivation">
+                </div>
+                <div class="form-group">
+                  <label for="ribInternal">rib International :</label>
+                  <input type="text" #ribInternal (ngModel)="ribInternal" name="ribInternal" id="ribInternal" class="form-control"
+                    placeholder="ribInternal">
+                </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+           
+
+            
+            <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>numCompte</th>
+                    <th>rib</th>
+                    <th>typeCompte</th>
+                    <th>codeProduit</th>
+                    <th>codeCategoryProduit</th> 
+                    <th>active</th>
+                    <th>dateActivation</th>
+                    <th>ribInternal</th>
+                    <!-- <th colspan="3">Contact </th> -->
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr *ngFor="let compteBank of comptedaveDetails">
+                    <td>{{compteBank.numCompte}}</td>
+                    <td>{{compteBank.rib}}</td>
+                    <td>{{compteBank.typeCompte}}</td>
+                    <td>{{compteBank.codeProduit}}</td>
+                    <td>{{compteBank.codeCategoryProduit}}</td>
+                    <td>{{compteBank.active}}</td>
+                    <td>{{compteBank.dateActivation}}</td>
+                    <td>{{compteBank.ribInternal}}</td>
+<!--                     <td>idContact</td>
+                    <td>adresse</td>
+                    <td>telephone</td> -->
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal"
+                        (click)="edit(compteBank)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteComptedave(compteBank)">❌</button></td>
+              
+
+                 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modifier compte bancaire</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateComptedave()">
+          <div class="form-group">
+            <label for="numCompte">numCompte :</label>
+            <input type="text" #numCompte [(ngModel)]="comptedaveToUpdate.numCompte" name="numCompte" id="numCompte" class="form-control"
+              placeholder="numCompte">
+          </div>
+          <div class="form-group">
+            <label for="rib">rib :</label>
+            <input type="text" #rib [(ngModel)]="comptedaveToUpdate.rib" name="rib" id="rib"
+              class="form-control" placeholder=" rib">
+          </div>
+          <div class="form-group">
+            <label for="typeCompte">typeCompte :</label>
+            <input type="text" #typeCompte [(ngModel)]="comptedaveToUpdate.typeCompte" name="typeCompte" id="typeCompte"
+              class="form-control" placeholder=" typeCompte">
+          </div>
+          <div class="form-group">
+            <label for="codeProduit">codeProduit :</label>
+            <input type="text" #codeProduit [(ngModel)]="comptedaveToUpdate.codeProduit" name="codeProduit" id="codeProduit"
+              class="form-control" placeholder="codeProduit">
+          </div>
+          <div class="form-group">
+            <label for="codeCategoryProduit"> codeCategoryProduit :</label>
+            <input type="text" #codeCategoryProduit [(ngModel)]="comptedaveToUpdate.codeCategoryProduit" name="codeCategoryProduit" id="codeCategoryProduit"
+              class="form-control" placeholder="codeCategoryProduit">
+          </div>
+          <div class="form-group">
+            <label for="active">active :</label>
+            <input type="text" #active [(ngModel)]="comptedaveToUpdate.active" name="active" id="active" class="form-control"
+              placeholder="active">
+          </div>
+          <div class="form-group">
+            <label for="dateActivation">dateActivation :</label>
+            <input type="date" #dateActivation [(ngModel)]="comptedaveToUpdate.dateActivation" name="dateActivation" id="dateActivation"
+              class="form-control" placeholder=" dateActivation">
+          </div>
+          <div class="form-group">
+            <label for="ribInternal">ribInternal :</label>
+            <input type="text" #ribInternal [(ngModel)]="comptedaveToUpdate.ribInternal" name="ribInternal" id="ribInternal"
+              class="form-control" placeholder="ribInternal">
+          </div>
+
+
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!--        /#wrapper -->
+
+    

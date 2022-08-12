@@ -1,0 +1,215 @@
+
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+      <div class="btn-group shadow-0">
+              <button type="button" class="btn btn-light" routerLink="/referentieluser">
+                Référentiel
+              </button>
+      </div>
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light" routerLink="/daveuser">
+          Dave
+        </button>
+</div>
+        <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light" routerLink="/engagementuser">
+          Engagement
+        </button>
+</div>
+<hr/>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     
+      <div class="container-fluid">
+        <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+            <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="card mt-5" style="align-items: center;">
+        <h1>Engagement </h1>
+      </div>
+      <br/>
+    
+
+      <br/><br/>
+    <!-- Button trigger modal -->
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+ Ajouter un Crédit prêt
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Ajouter un Crédit prêt</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="card mt-5" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+
+          <div class="form-group">
+            <label for="tauxProgression">Taux de progression:</label>
+            <input type="number" #tauxProgression (ngModel)="tauxProgression" name="tauxProgression" id="tauxProgression" class="form-control"
+              placeholder="tauxProgression">
+          </div>
+          <div class="form-group">
+            <label for="datePremiereTranche">Date de premiére tranche:</label>
+            <input type="date" #datePremiereTranche (ngModel)="datePremiereTranche" name="datePremiereTranche" id="datePremiereTranche" class="form-control"
+              placeholder="datePremiereTranche">
+          </div>
+          <div class="form-group">
+            <label for="estReporte">Reporté:</label>
+            <input type="text" #estReporte (ngModel)="estReporte" name="estReporte" id="estReporte" class="form-control"
+              placeholder="estReporte">
+          </div>
+          <div class="form-group">
+            <label for="estRenouvelable">Renouvelable:</label>
+            <input type="text" #estRenouvelable (ngModel)="estRenouvelable" name="estRenouvelable" id="estRenouvelable" class="form-control"
+              placeholder="estRenouvelable">
+          </div>
+          <div class="form-group">
+            <label for="dateEmission">Date d'émission:</label>
+            <input type="date" #dateEmission (ngModel)="dateEmission" name="dateEmission" id="dateEmission" class="form-control"
+              placeholder="dateEmission">
+          </div>
+          <div class="form-group">
+            <label for="dateExpiration">Date d'éxpiration:</label>
+            <input type="date" #dateExpiration (ngModel)="dateExpiration" name="dateExpiration" id="dateExpiration" class="form-control"
+              placeholder="dateExpiration">
+          </div>
+          <div class="form-group">
+            <label for="calAssurance">calAssurance:</label>
+            <input type="text" #calAssurance (ngModel)="calAssurance" name="calAssurance" id="calAssurance" class="form-control"
+              placeholder="calAssurance">
+          </div>
+          <br/>
+          <div class="form-group">
+            <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+          </div>
+        </form>
+      </div>
+
+ 
+          </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">
+Ajouter un Crédit renouvelable
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Ajouter un Crédit renouvelable</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <div class="card mt-5" style="padding: 20px;">
+        <form #registerForm1="ngForm" (ngSubmit)="registerR(registerForm1)" >
+
+          <div class="form-group">
+            <label for="dateFin">Date de fin:</label>
+            <input type="date" #dateFin (ngModel)="dateFin" name="dateFin" id="dateFin" class="form-control"
+              placeholder="dateFin">
+          </div>
+          <div class="form-group">
+            <label for="apport">Apport:</label>
+            <input type="number" #apport (ngModel)="apport" name="apport" id="apport" class="form-control"
+              placeholder="apport">
+          </div>
+         
+          <br/>
+          <div class="form-group">
+            <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+    
+    </div>
+
+  </div>
+</div>
+</div>
+<br/>
+<br/>
+
+
+
+
+    
+     
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->

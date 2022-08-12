@@ -1,0 +1,52 @@
+body
+{
+  background-color: white;
+}
+li
+{
+  list-style-type: none;
+  margin-left: 5vw;
+
+}
+
+li:first-child
+{
+  margin:0;
+}
+
+footer
+{
+  padding-top: 30vh;
+  padding-bottom: 2vh;
+  margin-left: 70%;
+
+}
+
+
+
+
+.copyright,  .impressum
+{
+  text-align: left;
+}
+
+.logo
+{
+  height: 3vh;
+  
+}
+
+@media (max-width: 768px) 
+{
+  li
+  {
+    margin-right: 0;
+    margin-bottom: 1vh;
+  }
+  
+  .sozial
+  {
+    
+    margin-bottom: 2vh;
+  }
+}

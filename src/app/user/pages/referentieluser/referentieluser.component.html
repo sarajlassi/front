@@ -1,0 +1,304 @@
+
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+      <div class="sidebar-heading">BFI </div>
+      <hr/>
+      <div class="list-group list-group-flush">
+
+       
+        <div class="btn-group shadow-0">
+                <button type="button" class="btn btn-light" routerLink="/referentieluser">
+                  Référentiel
+                </button>
+        </div>
+        <hr/>
+        <div class="btn-group shadow-0">
+          <button type="button" class="btn btn-light" routerLink="/daveuser">
+            Dave
+          </button>
+  </div>
+          <hr/>
+        <div class="btn-group shadow-0">
+          <button type="button" class="btn btn-light" routerLink="/engagementuser">
+            Engagement
+          </button>
+  </div>
+  <hr/>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <div class="container-fluid">
+          <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+              <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="card mt-5" style="align-items: center;">
+          <h1>Référentiel </h1>
+        </div>
+        <br/>
+      
+
+        <br/><br/>
+      <!-- Button trigger modal -->
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      
+        
+      
+      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  ➕ Ajouter un client
+</button>
+
+
+<br/><br/>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Ajouter un client</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="card mt-5" style="padding: 20px;">
+          <form #registerForm1="ngForm"  (ngSubmit)="registerMor(registerForm1)" >
+
+            <p>En tant qu'une personne morale </p>
+<!--                <div class="form-group">
+              <label for="type_client">Type du client:</label>
+              <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                placeholder="type_client">
+            </div> -->
+            <div class="form-group">
+              <label for="matricule">Matricule:</label>
+              <input type="text" #matricule (ngModel)="matricule" name="matricule" id="matricule" class="form-control"
+                placeholder="matricule">
+            </div>
+            <div class="form-group">
+              <label for="dateCreation">Date de création:</label>
+              <input type="date" #dateCreation (ngModel)="dateCreation" name="dateCreation" id="dateCreation" class="form-control"
+                placeholder="dateCreation">
+            </div>
+            <div class="form-group">
+              <label for="libCou">Libellé Court:</label>
+              <input type="text" #libCou (ngModel)="libCou" name="libCou" id="libCou" class="form-control"
+                placeholder="libCou">
+            </div>
+            <div class="form-group">
+              <label for="libLong">Libellé Long :</label>
+              <input type="text" #libLong (ngModel)="libLong" name="libLong" id="libLong" class="form-control"
+                placeholder="libLong">
+            </div>
+          <br/>
+            <div class="form-group">
+              <input type="submit" value="Ajouter une personne morale" class="btn btn-sm btn-outline-secondary w-100" >
+            </div>
+          </form>
+            <br/>
+            <p>En tant qu'une personne physique </p>
+            <form #registerForm="ngForm" (ngSubmit)="registerPhy(registerForm)">
+              
+            <!--   <div class="form-group">
+              <label for="type_client">Type du client:</label>
+              <input type="text" #type_client (ngModel)="type_client" name="type_client" id="type_client" class="form-control"
+                placeholder="type_client">
+            </div> -->
+            <div class="form-group">
+              <label for="cin">Cin:</label>
+              <input type="text" #cin (ngModel)="cin" name="cin" id="cin" class="form-control"
+                placeholder="cin">
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom:</label>
+              <input type="text" #prenom (ngModel)="prenom" name="prenom" id="prenom" class="form-control"
+                placeholder="prenom">
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom:</label>
+              <input type="text" #nom (ngModel)="nom" name="nom" id="nom" class="form-control"
+                placeholder="nom">
+            </div>
+            <div class="form-group">
+              <label for="dateNaissance">Date de naissance:</label>
+              <input type="date" #dateNaissance (ngModel)="dateNaissance" name="dateNaissance" id="dateNaissance" class="form-control"
+                placeholder="dateNaissance">
+            </div>
+            <div class="form-group">
+              <label for="emploi">Emploi :</label>
+              <input type="text" #emploi (ngModel)="emploi" name="emploi" id="emploi" class="form-control"
+                placeholder="emploi">
+            </div>
+            <br/>
+            <div class="form-group">
+              <input type="submit" value="Ajouter une personne physique" class="btn btn-sm btn-outline-secondary w-100">
+            </div>
+          </form>
+        </div>
+
+        
+      </div>
+      <div class="modal-footer">
+<!--         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+<button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">
+  ❌ Supprimer un client
+</button>
+<br/><br/>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Supprimer un client</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h6>Suppression d'un client physique 
+        </h6>
+
+        <div class="form-group">
+
+            <label for="cin">Taper le numéro de cin:</label>
+            <input type="text" #cin (ngModel)="cin" name="cin" id="cin" class="form-control"
+              placeholder="cin">
+
+              <div class="mt-5">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>idClient</th> 
+                       <th>cin</th>
+                      <th>Supprimer</th>  
+    
+    
+                    </tr>
+                  </thead>
+                  <tbody class="tbody">
+    
+    
+                       <tr *ngFor="let clientPhy of clientPhyDetails">
+    
+                        
+                        <td>{{clientPhy.idClient}}</td>
+                        <td>{{clientPhy.cin}}</td>
+                        <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteClientPhy(clientPhy)">❌</button></td>
+              
+                     
+                      </tr>
+    
+                  </tbody>
+                </table>
+              </div>
+<!--               <button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteClientPhyCin(cin)">❌</button> -->
+
+              <br/><br/>
+
+        <h6>Suppression d'un client moral </h6>
+        <div class="form-group">
+          <label for="matricule">Taper la matricule de la société: </label>
+          <input type="text" #matricule (ngModel)="matricule" name="matricule" id="matricule" class="form-control"
+            placeholder="matricule">
+
+            
+            <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idClient</th> 
+                     <th>Matricule</th>
+                    <th>Supprimer</th>  
+  
+  
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+  
+  
+                     <tr *ngFor="let clientMor of clientMorDetails">
+  
+                      
+                      <td>{{clientMor.idClient}}</td>
+                      <td>{{clientMor.matricule}}</td>
+                      <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteClientMor(clientMor)">❌</button></td>
+            
+                   
+                    </tr>
+  
+                </tbody>
+              </table>
+            </div>
+
+        </div> 
+
+
+         
+
+        
+      </div>
+
+      <!-- Modal footer  -->
+      <div class="modal-footer">
+      </div>
+   
+
+    </div>
+  </div>
+</div>
+
+
+
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->

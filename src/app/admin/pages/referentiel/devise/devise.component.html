@@ -1,0 +1,261 @@
+
+ <div class="d-flex" id="wrapper">
+
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading">BFI </div>
+    <hr/>
+    <div class="list-group list-group-flush">
+
+     
+                <div class="btn-group shadow-0">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                    Référentiel
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/referentiel">Accueil du Référentiel</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" routerLink="/client">Client</a></li>
+                    <li><a class="dropdown-item" routerLink="/agence">Agence</a></li>
+                    <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                    <li><a class="dropdown-item" routerLink="/pays">Pays</a></li>
+                    <li><a class="dropdown-item" routerLink="/devise">Devise</a></li>
+                  </ul>
+                </div>
+                
+          
+      <hr/>
+      <div class="btn-group shadow-0">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+          Dave
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/dave">Accueil du Dave</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" routerLink="/contratcompte">Contrat du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/solde">Solde du compte</a></li>
+          <li><a class="dropdown-item" routerLink="/comptedave">Compte bancaire</a></li>
+        </ul>
+      </div>
+
+        <hr/>
+
+<div class="btn-group shadow-0">
+  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" > 
+    Engagement
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/engagement">Accueil du Engagement</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/contratcredit">Contrat du crédit</a></li>
+    <li><a class="dropdown-item" routerLink="/creditpret">Crédit prêt </a></li>
+    <li><a class="dropdown-item" routerLink="/creditrenouvelable">Crédit renouvelable</a></li>
+
+  </ul>
+</div>
+    <hr/>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         
+          <div class="container-fluid">
+            <button class="btn btn-sm btn-outline-secondary" (click)="clickEvent()">≡</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-sm btn-outline-secondary" type="button">Rechercher</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+          <div class="container">
+            <div class="card mt-5" style="align-items: center;">
+              <h1>Référentiel ➺ Devise</h1>
+            </div>
+
+            <div class="card mt-5" style="padding: 20px;">
+              <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+<!--                 <div class="form-group">
+                  <label for="idDevise">idDevise:</label>
+                  <input type="number" #idDevise (ngModel)="idDevise" name="idDevise" id="idDevise" class="form-control"
+                    placeholder="idDevise">
+                </div> -->
+                <div class="form-group">
+                  <label for="decimale">Decimale:</label>
+                  <input type="number" #decimale (ngModel)="decimale" name="decimale" id="decimale" class="form-control"
+                    placeholder="Decimale">
+                </div>
+                <div class="form-group">
+                  <label for="nomDecimal">Nom Decimal:</label>
+                  <input type="text" #nomDecimal (ngModel)="nomDecimal" name="nomDecimal" id="nomDecimal" class="form-control"
+                    placeholder="nomDecimal">
+                </div>
+                <div class="form-group">
+                  <label for="nom">Nom:</label>
+                  <input type="text" #nom (ngModel)="nom" name="nom" id="nom" class="form-control"
+                    placeholder="nom">
+                </div>
+                <div class="form-group">
+                  <label for="nomTraduit">Nom Traduit:</label>
+                  <input type="text" #nomTraduit (ngModel)="nomTraduit" name="nomTraduit" id="nomTraduit" class="form-control"
+                    placeholder="nomTraduit">
+                </div>
+                <div class="form-group">
+                  <label for="quotite">Quotite:</label>
+                  <input type="number" #quotite (ngModel)="quotite" name="quotite" id="quotite" class="form-control"
+                    placeholder="quotite">
+                </div>
+                <div class="form-group">
+                  <label for="certain">Certain:</label>
+                  <input type="text" #certain (ngModel)="certain" name="certain" id="certain" class="form-control"
+                    placeholder="certain">
+                </div>
+                <div class="form-group">
+                  <label for="nomInternal">Nom Internationnal:</label>
+                  <input type="text" #nomInternal (ngModel)="nomInternal" name="nomInternal" id="nomInternal" class="form-control"
+                    placeholder="nomInternal">
+                </div>
+                <br/>
+                <div class="form-group">
+                  <input type="submit" value="Ajouter" class="btn btn-sm btn-outline-secondary w-100">
+                </div>
+              </form>
+            </div>
+
+            <div class="mt-5">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>idDevise</th>
+                    <th>decimale</th>
+                    <th>nomDecimal</th>
+                    <th>nom</th>
+                    <th>nomTraduit</th>
+                    <th>quotite</th>
+                    <th>certain</th>
+                    <th>nomInternal</th>
+                    <th>Modifier</th>
+                    <th> Supprimer</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody">
+                  <tr *ngFor="let devise of deviseDetails">
+                    <td>{{devise.idDevise}}</td>
+                    <td>{{devise.decimale}}</td>
+                    <td>{{devise.nomDecimal}}</td>
+                    <td>{{devise.nom}}</td>
+                    <td>{{devise.nomTraduit}}</td>
+                    <td>{{devise.quotite}}</td>
+                    <td>{{devise.certain}}</td>
+                    <td>{{devise.nomInternal}}</td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal"
+                        (click)="edit(devise)">✎</button></td>
+                    <td><button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteDevise(devise)">❌</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modifier devise</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #updateForm="ngForm" (ngSubmit)="updateDevise()">
+          <div class="form-group">
+            <label for="idDevise"> idDevise :</label>
+            <input type="number" disabled="" #idDevise [(ngModel)]="deviseToUpdate.idDevise" name="idDevise" id="idDevise"
+              class="form-control" placeholder="idDevise">
+          </div>
+          <div class="form-group">
+            <label for="decimale">decimale :</label>
+            <input type="number" #decimale [(ngModel)]="deviseToUpdate.decimale" name="decimale" id="decimale" class="form-control"
+              placeholder="decimale">
+          </div>
+          <div class="form-group">
+            <label for="nomDecimal">nomDecimal :</label>
+            <input type="text" #nomDecimal [(ngModel)]="deviseToUpdate.nomDecimal" name="nomDecimal" id="nomDecimal"
+              class="form-control" placeholder=" nomDecimal">
+          </div>
+          <div class="form-group">
+            <label for="nom">nom :</label>
+            <input type="text" #nom [(ngModel)]="deviseToUpdate.nom" name="nom" id="nom"
+              class="form-control" placeholder="nom">
+          </div>
+          <div class="form-group">
+            <label for="nomTraduit"> nomTraduit :</label>
+            <input type="text" #nomTraduit [(ngModel)]="deviseToUpdate.nomTraduit" name="nomTraduit" id="nomTraduit"
+              class="form-control" placeholder="nomTraduit">
+          </div>
+          <div class="form-group">
+            <label for="quotite">quotite :</label>
+            <input type="number" #quotite [(ngModel)]="deviseToUpdate.quotite" name="quotite" id="quotite" class="form-control"
+              placeholder="quotite">
+          </div>
+          <div class="form-group">
+            <label for="certain">certain :</label>
+            <input type="text" #certain [(ngModel)]="deviseToUpdate.certain" name="certain" id="certain"
+              class="form-control" placeholder="certain">
+          </div>
+          <div class="form-group">
+            <label for="nomInternal">nomInternal :</label>
+            <input type="text" #nomInternal [(ngModel)]="deviseToUpdate.nomInternal" name="nomInternal" id="nomInternal"
+              class="form-control" placeholder="nomInternal">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Modifier" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!--       /#wrapper -->
+
+    
