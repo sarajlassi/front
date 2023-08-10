@@ -1,0 +1,9 @@
+.custom-dialog-container {
+    max-width: 90vw;
+}
+  .shop-image-popup {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; 
+  }
+  

@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../assets/guide.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .button {
+    width: 400px;
+    height: 150px;
+    font-size: 60px;
+    margin: 10px;
+    background-color: #3A6FF1;
+    border-radius: 50px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+  }
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  .back-button {
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+  }

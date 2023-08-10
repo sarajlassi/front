@@ -1,0 +1,124 @@
+<body>
+<div class="container" *ngIf="!isModif">
+    <app-goback></app-goback>
+  
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body text-center">
+              <h2>shop</h2>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button style="align-items: center;
+              background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+              border: 0;
+              border-radius: 8px;
+              box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+              box-sizing: border-box;
+              color: #FFFFFF;
+              display: flex;
+              font-family: Phantomsans, sans-serif;
+              font-size: 20px;
+              justify-content: center;
+              line-height: 1em;
+              max-width: 100%;
+              min-width: 140px;
+              padding: 19px 24px;
+              text-decoration: none;
+              user-select: none;
+              -webkit-user-select: none;
+              touch-action: manipulation;
+              white-space: nowrap;
+              cursor: pointer;" class="btn btn-primary btn-fw-bold text-uppercase" routerLink="/addshop">ADD</button>
+          </div>
+          
+          <br>
+            <div class="table-responsive">
+              <table class="table">
+  <thead class="thead-light">
+      <tr>
+        
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Image</th>
+        <th scope="col">Location</th>
+        <th scope="col">category</th>
+
+        <th scope="col">Actions</th> 
+      </tr>
+    </thead>
+    <tbody class="customtable" *ngFor="let c of shops;">
+      <tr>
+        
+        <td>{{ c.idShop }}</td>
+        <td>{{ c.nameShop }}</td>
+        <td>
+          <div class="image-wrapper">
+            <img [src]="c.safeImageShop"  class="rounded-circle" >
+          </div>
+        </td>
+        <td>
+          <div   class="image-wrapper">
+            <img  style="width: 80%;" [src]="c.localisationShop"   alt="Shop Image">
+          </div>
+        </td>
+        
+        <td>{{ c.category.nameCategory }}</td>
+
+        <td>
+          <div class="btn-group" role="group">
+            <button class="btn btn-primary btn-sm" (click)="editshop(c.idShop)">Edit</button>
+            <button style="color:red" class="btn btn-danger btn-sm" (click)="deleteshop(c.idShop)">Delete</button>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body p-4 p-sm-5"*ngIf="isModif">
+      <app-goback></app-goback>
+      <h1 class="card-title text-center mb-5  fs-5"><i>Edit shop</i></h1>
+      <form [formGroup]="addshop" (ngSubmit)="onSubmit()" >
+    
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" formControlName="nameShop" id="floatingInputUsername" placeholder="myusername" required autofocus>
+          <label for="floatingInputUsername">  shop name</label>
+          <span class="text-danger" *ngIf="f['nameShop'].invalid && f['nameShop'].touched " class="text-danger">
+           verify shop name              </span>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" formControlName="localisationShop" id="floatingInputEmail" placeholder="name@example.com">
+          <label for="floatingInputEmail">   Shop location </label>
+          <span class="text-danger" *ngIf="f['localisationShop'].invalid && f['localisationShop'].touched " class="text-danger">
+           verify shop location              </span>
+        </div>
+
+          <div class="form-floating mb-3">
+            <select class="form-select" formControlName="category" id="floatingSelectShop" required>
+              <option *ngFor="let s of category;" [value]="s.idCategory">{{ s.nameCategory }}</option>
+            </select>
+            <label for="floatingSelectShop">category</label>
+            <span class="text-danger" *ngIf="f['category'].invalid && f['category'].touched" class="text-danger">
+            verify category
+            </span>
+          </div>
+        
+          <div class="form-floating mb-3">
+            <input type="file" class="form-control" (change)="selectImage($event)" id="imageProduct" accept="image/*" name="image">
+            <label for="imageInput">Select new  image</label>
+            <span class="text-danger" *ngIf="selectedImageError">Please select image</span>
+          </div>
+<br>
+        <div class="d-grid mb-2">
+            <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" >EDIT</button>
+        </div>
+        
+          
+      </form>
+    </div>
+  </body>

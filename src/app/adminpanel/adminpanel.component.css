@@ -1,0 +1,65 @@
+.home-container {
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body {
+  background-image: url('../../assets/bg.png');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+  
+.feature-card {
+  margin-top: 5%;
+  width: calc(50% - 30px); 
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 10px; 
+  background-color: rgba(255, 255, 128, .5);
+	 
+    overflow: hidden;
+}
+
+.feature-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #fcf7f7;
+  margin-bottom: 20px;
+}
+
+.feature-card button {
+  background-color: #6919a7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.back-button {
+  position: relative;
+  left: 0; 
+}

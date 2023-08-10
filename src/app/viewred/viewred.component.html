@@ -1,0 +1,114 @@
+<body>
+<br>
+<app-goback></app-goback>
+<div class="container" *ngIf="!isModif">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body text-center">
+          <h2>Reductions</h2>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button style="align-items: center;
+          background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+          border: 0;
+          border-radius: 8px;
+          box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+          box-sizing: border-box;
+          color: #FFFFFF;
+          display: flex;
+          font-family: Phantomsans, sans-serif;
+          font-size: 20px;
+          justify-content: center;
+          line-height: 1em;
+          max-width: 100%;
+          min-width: 140px;
+          padding: 19px 24px;
+          text-decoration: none;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          white-space: nowrap;
+          cursor: pointer;" class="btn btn-primary btn-fw-bold text-uppercase" routerLink="/addred">ADD</button>
+        </div>
+        <br>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">New Price</th>
+                <th scope="col">Percentage</th>
+                
+                <th scope="col">Product</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="customtable">
+              <tr *ngFor="let r of reductions;">
+                <td>{{ r.idReduction }}</td>
+                <td>{{ r.nameReduction }}</td>
+                <td>{{ r.newprice }} DT</td>
+                <td>{{ r.pourcentage }} %</td>
+                
+                <td>{{ r.product.nameProduct }}</td>
+                <td>
+                  <div class="btn-group" role="group">
+                    <button class="btn btn-primary btn-sm" (click)="editReduction(r.idReduction)">Edit</button>
+                    <button style="color:red"  class="btn btn-danger btn-sm" (click)="deleteReduction(r.idReduction)">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-body p-4 p-sm-5" *ngIf="isModif">
+  <h1 class="card-title text-center mb-5 fs-5"><i>Edit Reduction</i></h1>
+  <form [formGroup]="addReductionForm" (ngSubmit)="onSubmit()">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" formControlName="nameReduction" id="floatingInputUsername"
+        placeholder="myusername" required autofocus>
+      <label for="floatingInputUsername">Reduction Name</label>
+      <span class="text-danger" *ngIf="f['nameReduction'].invalid && f['nameReduction'].touched"
+        class="text-danger">Verify reduction name</span>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" formControlName="newprice" id="floatingInputNewPrice" placeholder="0"
+        required>
+      <label for="floatingInputNewPrice">New Price</label>
+      <span class="text-danger" *ngIf="f['newprice'].invalid && f['newprice'].touched"
+        class="text-danger">Verify new Price</span>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" formControlName="pourcentage" id="floatingInputPourcentage"
+        placeholder="0" required>
+      <label for="floatingInputPourcentage">Percentage</label>
+      <span class="text-danger" *ngIf="f['pourcentage'].invalid && f['pourcentage'].touched"
+        class="text-danger">Verify Percentage</span>
+    </div>
+    
+    <div class="form-floating mb-3">
+      <select class="form-select" formControlName="product" id="floatingSelectProduct" required>
+        <option *ngFor="let p of products;" [value]="p.idProduct">{{ p.nameProduct }}</option>
+      </select>
+      <label for="floatingSelectProduct">Product</label>
+      <span class="text-danger" *ngIf="f['product'].invalid && f['product'].touched" class="text-danger">Verify Product</span>
+    </div>
+    
+    <br>
+    <div class="d-grid mb-2">
+      <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit"
+        [disabled]="isSubmitting">Edit Reduction</button>
+    </div>
+    <div *ngIf="isSuccess" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+  </form>
+</div>
+ </body>

@@ -1,0 +1,91 @@
+.background-image {
+  background-image: url('../../assets/bgc.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+}
+
+.back-button {
+  position: absolute; 
+  top: 20px;
+  left: 20px;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.card {
+  width: 300px;
+  height: 400px; 
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+
+ 
+}
+h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-top: 20px;
+}
+.red {
+  background-color: #FEC158;
+}
+
+.blue {
+  background-color: #3A6FF1;
+}
+
+.green {
+  background-color: #FEC158;
+}
+
+.yellow {
+  background-color: #3A6FF1;
+}
+
+
+
+img {
+  width: 240px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.arrow {
+
+  fill: #fff;
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 250px;
+  }
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+

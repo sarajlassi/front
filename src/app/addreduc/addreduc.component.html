@@ -1,0 +1,51 @@
+<div class="card-body p-4 p-sm-5">
+    <app-goback></app-goback>
+
+    <h1 class="card-title text-center mb-5 fs-5"><i>Add Reduction</i></h1>
+    <form [formGroup]="addReductionForm" (ngSubmit)="onSubmit()">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="nameReduction" id="floatingInputNameReduction"
+          placeholder="Nom réduction" required autofocus>
+        <label for="floatingInputNameReduction">Reduction name</label>
+        <span class="text-danger" *ngIf="f['nameReduction'].invalid && f['nameReduction'].touched">
+          Vérifier le nom de réduction
+        </span>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" formControlName="pourcentage" id="floatingInputPourcentage"
+          placeholder="0" required>
+        <label for="floatingInputPourcentage">Percentage</label>
+        <span class="text-danger" *ngIf="f['pourcentage'].invalid && f['pourcentage'].touched">
+         Verify percentage
+        </span>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" formControlName="product" id="floatingSelectProduct" required>
+          <option *ngFor="let p of products;" [value]="p.idProduct">{{ p.nameProduct }}</option>
+        </select>
+        <label for="floatingSelectProduct">Product</label>
+        <span class="text-danger" *ngIf="f['product'].invalid && f['product'].touched" class="text-danger">Vérifier le produit</span>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" formControlName="newprice" id="floatingInputNewPrice" placeholder="0"
+          required>
+        <label for="floatingInputNewPrice">New  price</label>
+        <span class="text-danger" *ngIf="f['newprice'].invalid && f['newprice'].touched">
+         Verify new price
+        </span>
+      </div>
+     
+       
+      
+      <div class="d-grid mb-2">
+        <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" [disabled]="isSubmitting">
+         Add reduction
+        </button>
+      </div>
+      <div *ngIf="isSuccess" class="alert alert-success">
+        {{ successMessage }}
+      </div>
+    </form>
+  </div>
+  

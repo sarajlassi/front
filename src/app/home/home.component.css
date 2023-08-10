@@ -1,0 +1,56 @@
+body {
+  background-image: url('../../assets/bg.png');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  margin-top: 40px; 
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.button {
+  width: 400px;
+  height: 150px;
+  font-size: 40px;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #f4e459;
+  border: none;
+  margin: 20px 60px; 
+  cursor: pointer;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

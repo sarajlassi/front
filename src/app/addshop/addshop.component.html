@@ -1,0 +1,50 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <app-goback></app-goback>
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+        <div class="card-img-left d-none d-md-flex"></div>
+        <div class="card-body p-4 p-sm-5">
+          <h1 class="card-title text-center mb-5 fs-5"><i>Add shop</i></h1>
+          <form [formGroup]="addshop" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="nameShop" id="floatingInputUsername" placeholder="myusername" required autofocus>
+              <label for="floatingInputUsername">Shop name</label>
+              <span class="text-danger" *ngIf="f['nameShop'].invalid && f['nameShop'].touched" class="text-danger">
+               Verify shop name
+              </span>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="file" class="form-control" (change)="selectLocalisationImage($event)" id="imageInput" accept="image/*" name="image">
+              <label for="imageInput">Sélectionner une image</label>
+              <span class="text-danger" *ngIf="selectedLocalisationImageError">Veuillez sélectionner une image</span>
+            </div>
+            <div class="form-floating mb-3">
+              <select class="form-select" formControlName="category" id="floatingSelectShop" required>
+                <option *ngFor="let s of category;" [value]="s.idCategory">{{ s.nameCategory }}</option>
+              </select>
+              
+              <label for="floatingSelectShop">category</label>
+              <span class="text-danger" *ngIf="f['category'].invalid && f['category'].touched" class="text-danger">
+                Vérifier le category
+              </span>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="file" class="form-control" (change)="selectImage($event)" id="imageInput" accept="image/*" name="image">
+              <label for="imageInput">Sélectionner une image</label>
+              <span class="text-danger" *ngIf="selectedImageError">Veuillez sélectionner une image</span>
+            </div>
+            <div class="d-grid mb-2">
+              <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" [disabled]="isSubmitting">Ajouter</button>
+            </div>
+            <div *ngIf="isSuccess" class="alert alert-success">
+              {{ successMessage }}
+            </div>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

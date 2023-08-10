@@ -1,0 +1,48 @@
+<body>
+    <div class="container">
+      <br>
+      <div class="row">
+        <app-goback></app-goback>
+
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          
+          <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+            <div class="card-img-left d-none d-md-flex">
+              </div>
+            <div class="card-body p-4 p-sm-5">
+              <h1 class="card-title text-center mb-5  fs-5"><i>Add Category</i></h1>
+              <form [formGroup]="addcat" (ngSubmit)="onSubmit()" >
+  
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" formControlName="nameCategory" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                  <label for="floatingInputUsername"> Category Name</label>
+                  <span class="text-danger" *ngIf="f['nameCategory'].invalid && f['nameCategory'].touched " class="text-danger">
+                  Verify Category name             </span>
+                </div>
+  <br>
+  <div class="form-floating mb-3">
+    <input type="file" class="form-control" (change)="selectImage($event)" id="imageInput" accept="image/*" name="image">
+    <label for="imageInput">Select an image</label>
+    <span class="text-danger" *ngIf="selectedImageError">Please select an image</span>
+  </div>
+
+  <div class="d-grid mb-2">
+    <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" [disabled]="isSubmitting">ADD</button>
+  </div>
+  
+  <div *ngIf="isSuccess" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+  <br>
+               
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+          
+               
+  

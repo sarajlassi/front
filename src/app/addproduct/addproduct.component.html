@@ -1,0 +1,73 @@
+<app-goback></app-goback>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+        <div class="card-img-left d-none d-md-flex">
+          <!-- Add any image or content for the card's image section if needed -->
+        </div>
+        <div class="card-body p-4 p-sm-5">
+          <h1 class="card-title text-center mb-5 fs-5"><i>Add Product</i></h1>
+          <form [formGroup]="addPod" (ngSubmit)="onSubmit()">
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="nameProduct" id="floatingInputName"
+                     placeholder="Product Name" required autofocus>
+              <label for="floatingInputName">Product Name</label>
+              <span class="text-danger" *ngIf="f['nameProduct'].invalid && f['nameProduct'].touched">
+                Verify Product Name
+              </span>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" formControlName="price" id="floatingInputPrice"
+                     placeholder="Product Price" required>
+              <label for="floatingInputPrice">Price</label>
+              <span class="text-danger" *ngIf="f['price'].invalid && f['price'].touched">
+            Verify price
+              </span>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select class="form-select" formControlName="shop" id="floatingSelectShop" required>
+                <option *ngFor="let s of shops;" [value]="s.idShop">{{ s.nameShop }}</option>
+              </select>
+              <label for="floatingSelectShop">Shop</label>
+              <span class="text-danger" *ngIf="f['shop'].invalid && f['shop'].touched">
+              Verify Shop
+              </span>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" formControlName="descriptionProduct" id="floatingInputDescription"
+                        placeholder="Product Description" rows="3" required></textarea>
+              <label for="floatingInputDescription">Product Description</label>
+              <span class="text-danger" *ngIf="f['descriptionProduct'].invalid && f['descriptionProduct'].touched">
+               Verify description
+              </span>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="file" class="form-control" (change)="selectImage($event)" id="imageInput" accept="image/*"
+                     name="image" required>
+              <label for="imageInput">Select an image</label>
+              <span class="text-danger" *ngIf="selectedImageError">Please select an image</span>
+            </div>
+
+            <div class="d-grid mb-2">
+              <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" [disabled]="isSubmitting">
+                ADD
+              </button>
+            </div>
+
+            <div *ngIf="isSuccess" class="alert alert-success">
+              {{ successMessage }}
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

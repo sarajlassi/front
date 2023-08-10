@@ -1,0 +1,148 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #3A6FF1;
+    color: #fff;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .header-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 20px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .search-button {
+    background-color: #3A6FF1;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .search-button:hover {
+    background-color: #FEC158;
+  }
+  .shop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .shop-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height: 300px; 
+    width: 250px; 
+  }
+  
+  .shop-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .shop-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px; 
+  }
+  
+  .shop-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .back-button {
+    position: relative;
+    left: 0; 
+  }
+  
+  .navigation-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .navigation-button:hover {
+    background-color: #45a049;
+  }
+  
+  .navigation-button:focus {
+    outline: none;
+  }
+  
+  .navigation-button:active {
+    background-color: #3e8e41;
+  }
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column; 
+      align-items: flex-start; 
+      padding: 20px 10px; 
+    }
+  
+    .logo img {
+      width: 100px; 
+    }
+  
+    .search-bar {
+      margin-top: 10px; 
+    }
+    .shop-card {
+      width: 100%; 
+      max-width: 400px; 
+    }
+  }

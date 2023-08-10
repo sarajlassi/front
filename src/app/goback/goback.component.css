@@ -1,0 +1,13 @@
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .back-button {
+    position: relative;
+    left: 0; 
+  }

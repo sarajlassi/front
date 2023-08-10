@@ -1,0 +1,31 @@
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="../../assets/shop.png" alt="Logo">
+    </div>
+    <h1 class="header-title">Shops</h1>
+
+    <div class="search-bar">
+      <input type="text" placeholder="We help you find your way.." class="search-input" [(ngModel)]="searchInput">
+      <button class="search-button" (click)="searchProducts()">Search</button>
+    </div>
+  </header>
+  <br>
+  <button mat-fab color="primary" class="back-button" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <div class="shop-container">
+    <div class="shop-card" *ngFor="let s of shops;">
+      <img [src]="s.safeImageShop" >
+      <h2 class="shop-title">{{ s.nameShop }}</h2>
+      <button class="navigation-button" (click)="showImageOnClick(s.safeLocalisationImage)">Navigate</button>
+    </div>
+  </div>
+  <div class="navigation-buttons">
+    
+  
+    <button mat-fab color="primary" routerLink="/home">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+</body>

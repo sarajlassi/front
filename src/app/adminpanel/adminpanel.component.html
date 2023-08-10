@@ -1,0 +1,41 @@
+<body>
+
+  <div class="home-container" >
+    <button mat-fab color="primary" class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+      <h1>WELCOME TO THE ADMIN PANEL</h1>
+      <p>Here, you can manage your application features :</p>
+    
+      <div class="feature-card">
+        <h2>Manage Shops</h2>
+        <p>You can add, update, view and delete shops.</p>
+        <button mat-button routerLink="/viewshop">Access Shops</button>
+      </div>
+    
+      <div class="feature-card">
+        <h2>Manage Products</h2>
+        <p>You can add, update, view and delete products.</p>
+        <button mat-button routerLink="/viewprod">Access Products</button>
+      </div>
+    
+      <div class="feature-card">
+        <h2>Manage Reductions</h2>
+        <p>You can add, update, view and delete Reductions.</p>
+        <button mat-button routerLink="/viewred">Acess Reductions</button>
+      </div>
+    
+      <div class="feature-card">
+        <h2>Manage Categories</h2>
+        <p>You can add, update, view and delete Categories</p>
+        <button mat-button routerLink="/viewcat">Access Categories</button>
+      </div>
+      <div class="navigation-buttons">
+     
+    
+        <button mat-fab color="primary" routerLink="/home">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+    </div>
+  </body>
