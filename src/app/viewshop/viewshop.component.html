@@ -59,7 +59,7 @@
         </td>
         <td>
           <div   class="image-wrapper">
-            <img  style="width: 80%;" [src]="c.localisationShop"   alt="Shop Image">
+            <img  style="width: 80%;" [src]="c.safeLocalisationImage"   alt="Shop Image">
           </div>
         </td>
         
@@ -92,8 +92,9 @@
            verify shop name              </span>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" formControlName="localisationShop" id="floatingInputEmail" placeholder="name@example.com">
-          <label for="floatingInputEmail">   Shop location </label>
+            <input type="file" class="form-control" (change)="selectLocalisationImage($event)" id="localisationImageInput" accept="image/*" name="localisationImage">
+            <label for="localisationImageInput">Shop location</label>
+            
           <span class="text-danger" *ngIf="f['localisationShop'].invalid && f['localisationShop'].touched " class="text-danger">
            verify shop location              </span>
         </div>

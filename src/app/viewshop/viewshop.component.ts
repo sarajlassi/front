@@ -38,13 +38,16 @@ export class ViewshopComponent implements OnInit {
   getshops(): void {
     this.service.get_shops().subscribe(
       (data) => {
-        this.shops = data.map((shop: { imageShop: any }) => {
+        this.shops = data.map((shop: { imageShop: any, localisationShop: any }) => {
           const imageUrl = `http://localhost:9090/api/mall-1/Shop/images/${shop.imageShop}`;
+          const localisationImageUrl = `http://localhost:9090/api/mall-1/Shop/images/${shop.localisationShop}`;
           const safeImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+          const safeLocalisationImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(localisationImageUrl);
 
           return {
             ...shop,
-            safeImageShop: safeImageUrl
+            safeImageShop: safeImageUrl,
+            safeLocalisationImage: safeLocalisationImageUrl
           };
         });
         console.log(this.shops);

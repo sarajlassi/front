@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { ServiceService } from '../service.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   login = new FormGroup({
-    Email: new FormControl('', [Validators.required]),
-    mdp: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private service: ServiceService,private router:Router) {}
+  constructor(private service: ServiceService) {}
 
   get f() {
     return this.login.controls;
@@ -30,15 +29,13 @@ export class LoginComponent {
     }
 
     const formData = new FormData();
-    formData.append('Email', this.login.value.Email!);
-    formData.append('mdp', this.login.value.mdp!);
+    formData.append('email', this.login.value.email!);
+    formData.append('password', this.login.value.password!);
 
     this.service.login(formData).subscribe(
       (data) => {
         console.log(data);
         this.admin();
-        this.router.navigate(['/adminpanel']);
-
         this.login.reset();
       },
       (error) => {
