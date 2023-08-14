@@ -50,6 +50,7 @@ export class ViewshopComponent implements OnInit {
             safeLocalisationImage: safeLocalisationImageUrl
           };
         });
+        this.shops.reverse();
         console.log(this.shops);
       }
     );

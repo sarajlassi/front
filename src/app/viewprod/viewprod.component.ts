@@ -46,7 +46,8 @@ export class ViewprodComponent implements OnInit {
             safeImageProduct: safeImageUrl
           };
         });
-        console.log(this.products);
+        this.products.reverse();
+                console.log(this.products);
       }
     );
   }

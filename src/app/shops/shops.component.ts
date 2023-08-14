@@ -37,15 +37,26 @@ export class ShopsComponent {
             safeLocalisationImage: safeLocalisationImageUrl
           };
         });
+        this.allShops = this.shops; 
+        // Set the allShops array here
+this.shops.reverse();
         console.log(this.shops);
       }
     );
   }
   
   searchProducts(): void {
-    this.shops = this.allShops.filter(shops =>
-      shops.nameShop.toLowerCase().includes(this.searchInput.toLowerCase())
+    console.log("All Shops:", this.allShops);
+    
+    this.shops = this.allShops.filter(shop =>
+      shop.nameShop.toLowerCase().includes(this.searchInput.toLowerCase())
     );
+  
+    console.log("Filtered Shops:", this.shops);
+  }
+  resetSearch(): void {
+    this.searchInput = '';
+    this.shops = this.allShops; 
   }
   goBack(): void {
     this.location.back();

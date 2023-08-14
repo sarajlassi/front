@@ -42,6 +42,7 @@ export class ViewcatComponent implements OnInit {
             safeImageCategory: safeImageUrl
           };
         });
+        this.categories.reverse();
         console.log(this.categories);
       }
     );

@@ -34,6 +34,8 @@ export class CategoryComponent {
             safeImageCategory: safeImageUrl
           };
         });
+        this.categories.reverse();
+
         console.log(this.categories);
       }
     );

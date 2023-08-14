@@ -38,6 +38,7 @@ export class ViewredComponent {
     this.service.get_reduction().subscribe(
       (data) => {
         this.reductions = data;
+        this.reductions.reverse();
       },
       (error) => {
         console.error('Error fetching reductions:', error);

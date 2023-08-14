@@ -47,26 +47,72 @@ export class ReductionComponent {
   getReductions(): void {
     this.service.get_reduction().subscribe(
       (data) => {
-        this.reduction = data.map((reduction: { product: { imageProduct: any } }) => { // Updated property path
-          const imageUrl = `http://localhost:9090/api/mall-1/Product/images/${reduction.product.imageProduct}`; // Updated property path
+        this.reduction = data.map((reduction:any) => { // Updated property path
+          const imageUrl = `http://localhost:9090/api/mall-1/Product/images/${reduction.product.imageProduct}`;
+          const shopLocalizationImageUrl = `http://localhost:9090/api/mall-1/Shop/images/${reduction.product.shop.localisationShop}`;
+
           const safeImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+          const safeShopLocalizationImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(shopLocalizationImageUrl);
 
           return {
             ...reduction,
             safeImageProduct: safeImageUrl,
+            safeLocalizationImage: safeShopLocalizationImageUrl
+
           };
         });
         this.allReductions = data;
-        console.log(this.reduction);
+        this.reduction.reverse();
+        console.log('Filtered Reductions:', this.reduction);
       }
     );
   }
+  resetSearch(): void {
+    this.searchInput = '';
+    
+    this.service.get_reduction().subscribe(
+      (data) => {
+        this.reduction = data.map((reduction:any) => { // Updated property path
+          const imageUrl = `http://localhost:9090/api/mall-1/Product/images/${reduction.product.imageProduct}`;
+          const shopLocalizationImageUrl = `http://localhost:9090/api/mall-1/Shop/images/${reduction.product.shop.localisationShop}`;
 
+          const safeImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+          const safeShopLocalizationImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(shopLocalizationImageUrl);
+
+          return {
+            ...reduction,
+            safeImageProduct: safeImageUrl,
+            safeLocalizationImage: safeShopLocalizationImageUrl
+
+          };
+        });
+        this.allReductions = data;
+        console.log('Filtered Reductions:', this.reduction);
+      }
+    );
+  }
   searchReduction(): void {
     this.reduction = this.allReductions.filter(reduction =>
-      reduction.nameReduction.toLowerCase().includes(this.searchInput.toLowerCase()) ||
-      reduction.pourcentage.toString().includes(this.searchInput.toLowerCase())
-    );console.log(this.searchInput)
-  }
+      reduction.product.nameProduct.toLowerCase().includes(this.searchInput.toLowerCase()) ||
+      reduction.pourcentage.toString().includes(this.searchInput)
+    );
+    this.reduction = this.reduction.map((reduction: any) => {
+      const imageUrl = `http://localhost:9090/api/mall-1/Product/images/${reduction.product.imageProduct}`;
+      const shopLocalizationImageUrl = `http://localhost:9090/api/mall-1/Shop/images/${reduction.product.shop.localisationShop}`;
+  
+      const safeImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+      const safeShopLocalizationImageUrl: SafeUrl = this.sanitizer.bypassSecurityTrustUrl(shopLocalizationImageUrl);
+  
+      return {
+        ...reduction,
+        safeImageProduct: safeImageUrl,
+        safeLocalizationImage: safeShopLocalizationImageUrl
+      };
+    });
+  
+    console.log('Filtered Reductions:', this.reduction);
+    }
    
 }
+ 
+ 

@@ -5,8 +5,9 @@
     </div>
     <h1 class="header-title">Reduction</h1>
     <div class="search-bar">
-      <input type="text" placeholder="Rechercher des réductions..." class="search-input" [(ngModel)]="searchInput">
+      <input type="text" placeholder="Search for products..." class="search-input" [(ngModel)]="searchInput">
       <button class="search-button" (click)="searchReduction()">Search</button>
+      <button class="search-button" (click)="resetSearch()">Reset</button>
     </div>
   </header>
 
@@ -31,7 +32,7 @@
             <h4>Reduction : {{ r.pourcentage }}%</h4>
             <h3 class="card-title">Brand : {{ r.product.shop.nameShop }}</h3>
             <p class="card-description">{{ r.product.descriptionProduct }}</p>
-            <a (click)="showImageOnClick(r.product.shop.localisationShop)" class="card-link">View shop</a>
+            <a (click)="showImageOnClick(r.safeLocalizationImage)" class="card-link">View Shop</a>
           </div>
         </div>
       </div>

@@ -17,8 +17,8 @@
             </div>
             <div class="form-floating mb-3">
               <input type="file" class="form-control" (change)="selectLocalisationImage($event)" id="imageInput" accept="image/*" name="image">
-              <label for="imageInput">Sélectionner une image</label>
-              <span class="text-danger" *ngIf="selectedLocalisationImageError">Veuillez sélectionner une image</span>
+              <label for="imageInput">Select image location</label>
+              <span class="text-danger" *ngIf="selectedLocalisationImageError">Please select image location !!</span>
             </div>
             <div class="form-floating mb-3">
               <select class="form-select" formControlName="category" id="floatingSelectShop" required>
@@ -32,11 +32,11 @@
             </div>
             <div class="form-floating mb-3">
               <input type="file" class="form-control" (change)="selectImage($event)" id="imageInput" accept="image/*" name="image">
-              <label for="imageInput">Sélectionner une image</label>
-              <span class="text-danger" *ngIf="selectedImageError">Veuillez sélectionner une image</span>
+              <label for="imageInput">Select the shop logo</label>
+              <span class="text-danger" *ngIf="selectedImageError">Please select the shop image</span>
             </div>
             <div class="d-grid mb-2">
-              <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" [disabled]="isSubmitting">Ajouter</button>
+              <button class="btn btn-lg btn-primary btn-fw-bold text-uppercase" type="submit" [disabled]="isSubmitting">ADD SHOP</button>
             </div>
             <div *ngIf="isSuccess" class="alert alert-success">
               {{ successMessage }}

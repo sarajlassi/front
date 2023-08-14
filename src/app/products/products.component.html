@@ -6,8 +6,9 @@
     <h1 class="header-title">Products</h1>
 
     <div class="search-bar">
-      <input type="text" placeholder="We help you find your way.." class="search-input" [(ngModel)]="searchInput">
+      <input type="text" placeholder="Search for products..." class="search-input" [(ngModel)]="searchInput">
       <button class="search-button" (click)="searchProducts()">Search</button>
+      <button class="search-button" (click)="resetSearch()">Reset</button>
     </div>
   </header>
   <br>
@@ -16,13 +17,13 @@
   </button>
   <div class="card-container">
     <div class="card" *ngFor="let p of products;">
-      <img [src]="p.safeImageProduct" alt="Product 1" class="card-image">
+      <img [src]="p.safeImageProduct" alt="Product Image" class="card-image">
       <div class="card-content">
         <h2 class="card-title">{{ p.nameProduct }}</h2>
         <p class="card-description">{{ p.descriptionProduct }}</p>
         <h3 class="card-title">{{ p.shop.nameShop }}</h3>
         <h3 class="card-title">{{ p.price }} DT</h3>
-        <a (click)="showImageOnClick(p.shop.localisationShop)" class="card-link">View Shop</a>
+        <button mat-raised-button (click)="showLocalizationImageOnClick(p.safeLocalizationImage)">View Shop Localization</button>
       </div>
     </div>
   </div>
