@@ -26,7 +26,10 @@ export class ShopsByCatComponent {
       this.getShopsByCategory(categoryId);
     });
   }
-
+  resetSearch(): void {
+    this.searchInput = '';
+    this.shops = this.allShops; 
+  }
   getShopsByCategory(categoryId: number): void {
     this.service.chercher_Shops(categoryId).subscribe((data) => {
       this.shops = data.map((shop: { imageShop: any, localisationShop: any }) => {
@@ -55,9 +58,13 @@ export class ShopsByCatComponent {
   }
 
   searchProducts(): void {
-    this.shops = this.allShops.filter(shops =>
-      shops.nameShop.toLowerCase().includes(this.searchInput.toLowerCase())
+    console.log("All Shops:", this.allShops);
+    
+    this.shops = this.allShops.filter(shop =>
+      shop.nameShop.toLowerCase().includes(this.searchInput.toLowerCase())
     );
+  
+    console.log("Filtered Shops:", this.shops);
   }
   showImageOnClick(imageUrl: string): void {
     this.dialog.open(ImagePopupComponent, {

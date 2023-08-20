@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { ServiceService } from '../service.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +13,7 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private service: ServiceService) {}
+  constructor(private service: ServiceService,private router:Router) {}
 
   get f() {
     return this.login.controls;
@@ -37,6 +37,7 @@ export class LoginComponent {
         console.log(data);
         this.admin();
         this.login.reset();
+        this.router.navigate(['/adminpanel']);
       },
       (error) => {
         console.error(error);

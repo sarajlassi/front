@@ -21,15 +21,15 @@ import { ViewshopComponent } from './viewshop/viewshop.component';
 import { ViewredComponent } from './viewred/viewred.component';
 import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-  { path: 'adminpanel', component: AdminpanelComponent  },
-  { path: 'addcat', component: AddcatComponent },
-  { path: 'addprod', component: AddproductComponent },
-  { path: 'addred', component: AddreducComponent },
-  { path: 'addshop', component: AddshopComponent  },
-  { path: 'viewcat', component: ViewcatComponent },
-  { path: 'viewprod', component: ViewprodComponent  },
-  { path: 'viewshop', component: ViewshopComponent  },
-  { path: 'viewred', component: ViewredComponent  },
+  { path: 'adminpanel', component: AdminpanelComponent, canActivate: [AdminGuard] },
+  { path: 'addcat', component: AddcatComponent, canActivate: [AdminGuard] },
+  { path: 'addprod', component: AddproductComponent, canActivate: [AdminGuard] },
+  { path: 'addred', component: AddreducComponent, canActivate: [AdminGuard] },
+  { path: 'addshop', component: AddshopComponent, canActivate: [AdminGuard] },
+  { path: 'viewcat', component: ViewcatComponent, canActivate: [AdminGuard] },
+  { path: 'viewprod', component: ViewprodComponent, canActivate: [AdminGuard] },
+  { path: 'viewshop', component: ViewshopComponent, canActivate: [AdminGuard] },
+  { path: 'viewred', component: ViewredComponent, canActivate: [AdminGuard] },
   { path: 'login', component: LoginComponent },
 
 
@@ -42,7 +42,6 @@ const routes: Routes = [
   { path: 'reduction', component: ReductionComponent },
   { path: 'shops', component: ShopsComponent },
   { path: 'shops-by-cat/:categoryId', component: ShopsByCatComponent },
-   
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

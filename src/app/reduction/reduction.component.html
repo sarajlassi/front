@@ -5,9 +5,9 @@
     </div>
     <h1 class="header-title">Reduction</h1>
     <div class="search-bar">
-      <input type="text" placeholder="Search for products..." class="search-input" [(ngModel)]="searchInput">
+      <input type="text" placeholder="Search for products..." class="search-input" (keydown)="searchReduction()"[(ngModel)]="searchInput">
       <button class="search-button" (click)="searchReduction()">Search</button>
-      <button class="search-button" (click)="resetSearch()">Reset</button>
+      
     </div>
   </header>
 
