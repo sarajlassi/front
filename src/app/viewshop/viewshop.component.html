@@ -1,7 +1,9 @@
 <body>
 <div class="container" *ngIf="!isModif">
     <app-goback></app-goback>
-  
+    <button mat-fab color="primary" routerLink="/login">
+      <mat-icon>logout</mat-icon>
+    </button>
       <div class="row">
         <div class="col-12">
           <div class="card">

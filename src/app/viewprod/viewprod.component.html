@@ -1,7 +1,9 @@
 <body>
   <br>
   <app-goback></app-goback>
-  
+  <button mat-fab color="primary" routerLink="/login">
+    <mat-icon>logout</mat-icon>
+  </button>
   <div class="container" *ngIf="!isModif">  
         <div class="row">
           <div class="col-12">
@@ -78,7 +80,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>   
       <div class="card-body p-4 p-sm-5"*ngIf="isModif">
         <h1 class="card-title text-center mb-5  fs-5"><i>Edit Product</i></h1>
         <form [formGroup]="addPod" (ngSubmit)="onSubmit()" >

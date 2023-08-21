@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,11 +13,7 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private service: ServiceService,private router:Router) {}
-
-  get f() {
-    return this.login.controls;
-  }
+  constructor(private router: Router) {}
 
   admin() {
     localStorage.setItem('role', 'administrateur');
@@ -25,23 +21,16 @@ export class LoginComponent {
 
   onSubmit() {
     if (!this.login.valid) {
-      alert('Veuillez remplir tous les champs obligatoires ');
+      alert('Veuillez remplir tous les champs obligatoires');
+      return;
     }
 
-    const formData = new FormData();
-    formData.append('email', this.login.value.email!);
-    formData.append('password', this.login.value.password!);
-
-    this.service.login(formData).subscribe(
-      (data) => {
-        console.log(data);
-        this.admin();
-        this.login.reset();
-        this.router.navigate(['/adminpanel']);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    if (this.login.value.email === 'youssef@gmail.com' && this.login.value.password === '12345') {
+      this.admin();
+      this.login.reset();
+      this.router.navigate(['/adminpanel']);
+    } else {
+      console.error("Access denied");
+    }
   }
 }
