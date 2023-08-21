@@ -47,7 +47,10 @@ export class ViewcatComponent implements OnInit {
       }
     );
   }
-
+  onLogout() {
+    // Perform logout logic here, such as clearing local storage or any other necessary steps
+    // For example:
+    localStorage.removeItem('role');}
   editCategory(categoryId: number) {
     this.isModif = true;
     this.selectedCategoryId = categoryId;

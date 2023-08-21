@@ -45,7 +45,10 @@ export class ViewredComponent {
       }
     );
   }
-
+  onLogout() {
+    // Perform logout logic here, such as clearing local storage or any other necessary steps
+    // For example:
+    localStorage.removeItem('role');}
   getProducts() {
     this.service.get_products().subscribe(
       (data) => {
